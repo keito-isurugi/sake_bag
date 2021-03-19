@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | SAKE BAG</title>
+    <title><%= full_title(yield(:title)) %> | SAKE BAG</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+    <div class="container clearfix">
+      <div id="head-top" class="clearfix">
+        <h1>酒袋〜SAKE BAG〜</h1>
+        <div class="head-top-right clearfix">
+          <ul class="clearfix">
+            <li><%= link_to "ログイン",   '#' %></li>
+            <li><%= link_to "会員登録", '#' %></li>
+          </ul> 
+        </div>
+      </div>
+      <div id="head_innner" class="clearfix">
+        <div id="head_left_box">
+          <div id="head_logo">
+            <%= link_to "SAKE BAG", '#'%>
+          </div>
+          <div id="head_left">
+            <form action="/search/" id="BrandTopForm" method="#" accept-charset="utf-8">
+              <div>
+                <input type="text" placeholder="まだ使えません">
+                <input type="hidden">
+                <input type="submit" value="検索" name="" id="">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="clearfix">
+          <ul class="clearfix foot_support">
+            <li>
+              <%= link_to("このサイトについて", "#")%>
+            </li>
+            <li>
+              <%= link_to("ヘルプ", "#")%>
+            </li>
+            <li>
+              <%= link_to("お問い合わせ", "#")%>
+            </li>
+            <li>
+              <%= link_to("利用規約", "#")%>
+            </li>
+            <li>
+              <%= link_to("個人情報保護方針", "#")%>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright">
+          Copyright © 2021 SAKEBAG. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

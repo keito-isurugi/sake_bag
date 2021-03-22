@@ -1,2 +1,128 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+//-----------------------------------------------
+//共通
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+.main {
+  text-align: center;
+}
+
+.container {
+  width: auto;
+  padding:10px 0 0 0;
+  margin: 0 50px;
+}
+
+
+//-----------------------------------------------
+//header
+header {
+  background-color: #3A3F49;
+  color: #C4C7CC;
+}
+
+#head-top {
+  height: 20px;
+  border-bottom: 1px dotted #C4C7CC;
+  padding-bottom: 25px;
+}
+
+h1.head-top {
+  font-size: 14px;
+  float: left;
+  margin: 0;
+}
+
+.head-top-right {
+  float: right;
+}
+
+.head-top-right > ul {
+  margin: 0;
+}
+
+#head-inner {
+  margin: 10px 0px;
+}
+
+.head-left_box {
+  display: flex;
+  align-items: stretch;
+}
+
+.head-logo {
+  width: 180px;
+  display: flex;
+  align-items: center;
+}
+
+.head-left {
+  display: flex;
+  align-items: center;
+}
+
+form {
+
+}
+
+//-----------------------------------------------
+//main
+.main {
+  padding: 0;
+  margin: 0;
+}
+
+.main-image {
+  width: auto;
+  padding: 30px;
+  background-color: #E6E6E6;
+}
+
+.image {
+  width: 1000px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.sake-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+//-----------------------------------------------
+//footer
+
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #3A3F49;
+  color: #C4C7CC;
+}
+
+footer > .container {
+  padding-top: 0;
+}
+
+.foot_support > li {
+  margin: 10px;
+}
+
+.foot_support {
+  margin-bottom: 0;
+}
+
+.copyright {
+  margin-bottom: 10px;
+}
+
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= full_title(yield(:title)) %> | SAKE BAG</title>
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,20 +18,21 @@
     <header>
     <div class="container clearfix">
       <div id="head-top" class="clearfix">
-        <h1>酒袋〜SAKE BAG〜</h1>
+        <h1 class="head-top">酒袋〜SAKE BAG〜</h1>
         <div class="head-top-right clearfix">
-          <ul class="clearfix">
-            <li><%= link_to "ログイン",   '#' %></li>
-            <li><%= link_to "会員登録", '#' %></li>
+          <ul>
+            <li><%= link_to "ログイン", '#', :style => "color: #C4C7CC;" %></li>
+            <li>｜</li>
+            <li><%= link_to "会員登録", '#', :style => "color: #C4C7CC;" %></li>
           </ul> 
         </div>
       </div>
-      <div id="head_innner" class="clearfix">
-        <div id="head_left_box">
-          <div id="head_logo">
-            <%= link_to "SAKE BAG", '#'%>
+      <div id="head-inner" class="clearfix">
+        <div class="head-left_box">
+          <div class="head-logo">
+            <%= link_to "SAKE BAG", '#', :style => "color: white; font-size: 30px; font-weight: bold; "%>
           </div>
-          <div id="head_left">
+          <div class="head-left">
             <form action="/search/" id="BrandTopForm" method="#" accept-charset="utf-8">
               <div>
                 <input type="text" placeholder="まだ使えません">
@@ -45,34 +46,37 @@
     </div>
     </header>
 
-    <div class="container">
+    <div class="container main">
       <%= yield %>
     </div>
+
     <footer>
       <div class="container">
         <div class="clearfix">
           <ul class="clearfix foot_support">
             <li>
-              <%= link_to("このサイトについて", "#")%>
+              <%= link_to("このサイトについて", "#", :style => "color: #C4C7CC;")%>
             </li>
             <li>
-              <%= link_to("ヘルプ", "#")%>
+              <%= link_to("ヘルプ", "#", :style => "color: #C4C7CC;")%>
             </li>
             <li>
-              <%= link_to("お問い合わせ", "#")%>
+              <%= link_to("お問い合わせ", "#", :style => "color: #C4C7CC;")%>
             </li>
             <li>
-              <%= link_to("利用規約", "#")%>
+              <%= link_to("利用規約", "#", :style => "color: #C4C7CC;")%>
             </li>
             <li>
-              <%= link_to("個人情報保護方針", "#")%>
+              <%= link_to("個人情報保護方針", "#", :style => "color: #C4C7CC;")%>
             </li>
           </ul>
         </div>
+
         <div class="copyright">
           Copyright © 2021 SAKEBAG. All Rights Reserved.
         </div>
       </div>
+
     </footer>
   </body>
 </html>

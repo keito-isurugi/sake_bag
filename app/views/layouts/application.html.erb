@@ -5,63 +5,21 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <header>
-      <div class="navbar navbar-inverse">
-        <div class="container">
-
-          <%= link_to "SAKE BAG", '#', id: "logo"%>
-          <nav>
-            <ul id="navbar" class="nav navbar-nav navbar-right ">
-              <li><%= link_to "ホーム", "#"%></li>
-              <li><%= link_to "SAKE BAGとは", "#"%></li>
-              <li><%= link_to "ログイン", '#'%></li>
-              <li><%= link_to "会員登録", '#'%></li>
-            </ul> 
-          </nav>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
 
     <div class="container">
       <%= yield %>
     </div>
 
-    <footer>
-    <div class="navbar navbar-inverse">
-        <div class="container">
-          <div>
-            <ul class="foot_support">
-              <li>
-                <%= link_to("ヘルプ", "#", :style => "color: #C4C7CC;")%>
-              </li>
-              <li>
-                <%= link_to("お問い合わせ", "#", :style => "color: #C4C7CC;")%>
-              </li>
-              <li>
-                <%= link_to("利用規約", "#", :style => "color: #C4C7CC;")%>
-              </li>
-              <li>
-                <%= link_to("個人情報保護方針", "#", :style => "color: #C4C7CC;")%>
-              </li>
-            </ul>
-          </div>
+    <%= render 'layouts/footer' %>
+    
 
-          <div class="copyright">
-            Copyright © 2021 SAKEBAG. All Rights Reserved.
-          </div>
-        </div>
-      </div>
-    </footer>
+    
   </body>
 </html>

@@ -11,3 +11,16 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+// var emptyCells, i;
+
+// $('.review-content').each(function() {
+//   emptyCells = [];
+//   for (i = 0; i < $(this).find('.review-content-i').length; i++) {
+//     emptyCells.push($('<ul>', {
+//       class: 'cell is-empty'
+//     }));
+//   }
+//   $(this).append(emptyCells);
+// });

@@ -51,11 +51,13 @@
   </div>
 </section>
 
+
 <section class="main-review">
   <h1>お酒レビュー</h1>
-  <div class="review-content list-flex">
+  <ul class="review-content">
 
-    <div class="review-content-i">
+
+    <li class="review-content-i">
       <h4>アサヒスーパードライ</h4>
       <div class="review-image">
         <%= link_to image_tag("superdry.jpg", alt: "superdry", class: "sake-image-i") %>
@@ -78,38 +80,17 @@
       <div class="review-comment">
         <p>最高の一品。また飲みたいと思った今日このごろ</p>
       </div>
-    </div>
-    <div class="review-content-i">
-      <h4>アサヒスーパードライ</h4>
-      <div class="review-image">
-        <%= link_to image_tag("superdry.jpg", alt: "superdry", class: "sake-image-i") %>
-      </div>
-      <div class="review-nav list-flex">
-        <div class="review-user-image">
-          <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image-i") %>
-        </div>
-        <div class="review-user-star">
-          <p><a href="#">竈門炭治郎@水の呼吸</a></p>
-          <div class="review-star">
-            <%= link_to image_tag("star-on.png", alt: "1", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "2", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "3", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "4", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "5", class: "") %>
-          </div>
-        </div>
-      </div>
-      <div class="review-comment">
-        <p>最高の一品。また飲みたいと思った今日このごろ</p>
-      </div>
-    </div>
-    
+    </li>
+
+   
+
+  
+   
     
 
-  </div>
+  </ul>
   <p class="sake-log-more">
     <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
   </p>
 
 </section>
-

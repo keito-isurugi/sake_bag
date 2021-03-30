@@ -1,0 +1,80 @@
+<% provide(:title, "マイページ") %>
+
+<div class="main">
+  <div class="container">
+    <section class="user-profile">
+      <div class="user-profile-body"> 
+        <div class="user-profile-backimage">
+          <%= link_to image_tag("tomioka.jpg", alt: "backimage", class: "sake-image") %>
+        </div>
+        <div class="user-profile-image"> 
+          <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image") %>
+        </div>
+        <div>
+          <div class="user-profile-info">
+            <h2 class="user-profile-name"><%= @user.name %></h2>
+          </div>
+      </div>
+      <nav class="user-tab">
+       <ul>
+        <li class="main-li">
+          <%= link_to("レビュー", "#" )%>
+          <span>1</span>
+        </li>
+        <li class="main-li">
+          <%= link_to("ブランド", "#" )%>
+          <span>1</span>
+        </li>
+        <li class="main-li">
+          <%= link_to("フォロー", "#" )%>
+          <span>10</span>
+        </li>
+        <li class="main-li">
+          <%= link_to("フォロワー", "#" )%>
+          <span>10</span>
+        </li>
+
+       </ul>
+      </nav>
+      </div>
+    </section>
+  </div>
+  <ul class="review-content">
+
+
+    <li class="review-content-i main-li">
+      <h4>アサヒスーパードライ</h4>
+      <div class="review-image">
+        <%= link_to image_tag("superdry.jpg", alt: "superdry", class: "sake-image-i") %>
+      </div>
+      <div class="review-nav list-flex">
+        <div class="review-user-image">
+          <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image-i") %>
+        </div>
+        <div class="review-user-star">
+          <p><a href="#">竈門炭治郎@水の呼吸</a></p>
+          <div class="review-star">
+            <%= link_to image_tag("star-on.png", alt: "1", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "2", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "3", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "4", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "5", class: "") %>
+          </div>
+        </div>
+      </div>
+      <div class="review-comment">
+        <p>最高の一品。また飲みたいと思った今日このごろ</p>
+      </div>
+    </li>
+
+   
+
+  
+   
+    
+
+  </ul>
+  <p class="sake-log-more">
+    <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
+  </p>
+</div>

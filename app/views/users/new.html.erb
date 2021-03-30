@@ -1,3 +1,30 @@
 <% provide(:title, '会員登録') %>
-<h1>会員登録</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <h2 class="new-h2">SAKE BAG 会員登録</h2>
+          <%= render 'shared/error_messages' %>
+
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+
+          <%= f.label :password_confirmation, "パスワード(確認用)" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+          <p class="new-p">
+            <%= link_to "SAKE BAG利用規約", terms_of_service_path %>
+          に同意の上、「同意して会員登録」ボタンを押してください。
+          </p>
+          <%= f.submit "同意して会員登録", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

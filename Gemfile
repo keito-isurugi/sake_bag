@@ -32,6 +32,7 @@ group :development, :test do
   gem 'sqlite3', '1.4.1'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'factory_bot_rails', '~> 4.10.0'
 end
 
 group :development do
@@ -51,6 +52,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'shoulda-matchers'
 end
 
 group :production do
@@ -65,4 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-rails'
 gem 'bcrypt',         '3.1.13'
-
+gem 'carrierwave'
+gem 'rails-i18n'

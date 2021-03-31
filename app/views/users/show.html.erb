@@ -5,14 +5,16 @@
     <section class="user-profile">
       <div class="user-profile-body"> 
         <div class="user-profile-backimage">
-          <%= link_to image_tag("tomioka.jpg", alt: "backimage", class: "sake-image") %>
+          <%= link_to image_tag("default-backimage.jpg", alt: "backimage", class: "sake-image") %>
         </div>
         <div class="user-profile-image"> 
+        
           <% if @user.image_name? %>
-            <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
+              <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
           <% else %>
             <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
           <% end %>
+          
         </div>
         <div>
           <div class="user-profile-info">
@@ -53,7 +55,11 @@
       </div>
       <div class="review-nav list-flex">
         <div class="review-user-image">
-          <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image-i") %>
+          <% if @user.image_name? %>
+            <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
+          <% else %>
+            <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+          <% end %>
         </div>
         <div class="review-user-star">
           <p><a href="#"><%= @user.name %></a></p>
@@ -82,3 +88,5 @@
     <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
   </p>
 </div>
+
+

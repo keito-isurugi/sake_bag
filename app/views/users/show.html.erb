@@ -1,6 +1,6 @@
 <% provide(:title, "マイページ") %>
 
-<div class="main">
+<div class="main-show">
   <div class="container">
     <section class="user-profile">
       <div class="user-profile-body"> 
@@ -8,7 +8,11 @@
           <%= link_to image_tag("tomioka.jpg", alt: "backimage", class: "sake-image") %>
         </div>
         <div class="user-profile-image"> 
-          <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image") %>
+          <% if @user.image_name? %>
+            <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
+          <% else %>
+            <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+          <% end %>
         </div>
         <div>
           <div class="user-profile-info">
@@ -52,7 +56,7 @@
           <%= link_to image_tag("tanjiro.jpg", alt: "user", class: "sake-image-i") %>
         </div>
         <div class="review-user-star">
-          <p><a href="#">竈門炭治郎@水の呼吸</a></p>
+          <p><a href="#"><%= @user.name %></a></p>
           <div class="review-star">
             <%= link_to image_tag("star-on.png", alt: "1", class: "") %>
             <%= link_to image_tag("star-on.png", alt: "2", class: "") %>

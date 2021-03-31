@@ -281,6 +281,10 @@ input, textarea{
 //-----------------------------------------------
 //show
 
+.main-show{
+  text-align:center;
+}
+
 .user-profile {
   padding: 40px;
 }
@@ -342,6 +346,7 @@ input, textarea{
      height: 100%;
      display: flex;
     align-items: center;
+    border-left: 1px solid #ddd;
     > li {
      padding: 0 20px ;
      text-align: center;
@@ -351,7 +356,8 @@ input, textarea{
      > a{
        display: block;
        float: left;
-       
+       text-decoration: none;
+       font-weight: bold;
      }
      > span{
        float: right;

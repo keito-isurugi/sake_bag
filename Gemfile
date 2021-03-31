@@ -67,5 +67,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass', '3.4.1'
 gem 'jquery-rails'
 gem 'bcrypt',         '3.1.13'
-gem 'carrierwave'
-gem 'rails-i18n'
+gem 'carrierwave' #画像アップロード
+gem 'rails-i18n'  #日本語にするもの
+gem 'rmagick'

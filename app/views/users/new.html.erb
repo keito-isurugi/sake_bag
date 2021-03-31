@@ -10,6 +10,9 @@
           <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control' %>
 
+          <%= f.label :image_name, "プロフィール画像(任意)" %>
+          <%= f.file_field :image_name, class: 'form-control'%>
+
           <%= f.label :email %>
           <%= f.email_field :email, class: 'form-control' %>
 

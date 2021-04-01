@@ -1,0 +1,15 @@
+<li class="index-user">
+  <div class="index-user-image"> 
+    <% if user.image_name? %>
+        <%= image_tag user.image_name.url, alt: "user-image", class: "sake-image"%>
+    <% else %>
+      <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+    <% end %>
+  </div>
+  <div class="index-user-name">
+    <%= link_to user.name, user %>
+  </div>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"} %>
+  <% end %>
+</li>

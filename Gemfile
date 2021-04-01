@@ -70,3 +70,6 @@ gem 'bcrypt',         '3.1.13'
 gem 'carrierwave' #画像アップロード
 gem 'rails-i18n'  #日本語にするもの
 gem 'rmagick'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'

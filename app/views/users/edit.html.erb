@@ -1,0 +1,46 @@
+<% provide(:title, "マイページ設定") %>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+        <%= form_with(model: @user, local: true) do |f| %>
+          <h2 class="new-h2">マイページ管理</h2>
+          <%= render 'shared/error_messages' %>
+
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+
+          <%= f.label :image_name, "プロフィール画像" %>
+          <%= f.file_field :image_name, class: 'form-control'%>
+          <div class="edit-user-image"> 
+            <% if @user.image_name? %>
+                <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
+            <% else %>
+              <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+            <% end %>
+          </div>
+
+          <%= f.label :cover_image_name, "背景画像" %>
+          <%= f.file_field :cover_image_name, class: 'form-control'%>
+          <div class="edit-cover-image"> 
+            <% if @user.cover_image_name? %>
+                <%= image_tag @user.cover_image_name.url, alt: "cover-image", class: "sake-image" %>
+            <% else %>
+              <%= image_tag("cover_default.jpg", alt: "user-image", class: "sake-image") %>
+            <% end %>
+          </div>
+
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+
+          <%= f.label :password_confirmation, "パスワード(確認用)" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+          <%= f.submit "変更を保存", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

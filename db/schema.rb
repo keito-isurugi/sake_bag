@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_01_032444) do
+ActiveRecord::Schema.define(version: 2021_04_01_160351) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2021_04_01_032444) do
     t.string "image_name"
     t.text "self_introduction"
     t.string "remember_digest"
+    t.string "cover_image_name"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
+      remember user
       redirect_to @user
       flash[:success] = "ようこそ、SAKE BAGへ！"
     else

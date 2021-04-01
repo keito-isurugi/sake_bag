@@ -1,0 +1,20 @@
+<% provide(:title, 'ログイン') %>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+        <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+          <h2 class="new-h2">SAKE BAG会員情報でログイン</h2>
+
+          <%= f.label :メールアドレス %>
+          <%= f.email_field :email, class: 'form-control' %>
+
+          <%= f.label :パスワード %>
+          <%= f.password_field :password, class: 'form-control' %>
+
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        <% end %>
+        <p>新規会員登録は <%= link_to "こちらへ！", signup_path %></p>
+    </div>
+  </div>
+</div>

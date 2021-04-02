@@ -11,23 +11,55 @@
           <%= f.text_field :name, class: 'form-control' %>
 
           <%= f.label :image_name, "プロフィール画像" %>
-          <%= f.file_field :image_name, class: 'form-control'%>
+          <%= f.file_field :image_name, id: :user_img, class: 'form-control'%>
           <div class="edit-user-image"> 
             <% if @user.image_name? %>
-                <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
+                <%= image_tag @user.image_name.url, alt: "user-image", id: :img_prev, class: "sake-image" %>
             <% else %>
-              <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+              <%= image_tag("default.png", alt: "user-image", id: :img_prev, class: "sake-image") %>
             <% end %>
+            <script type="text/javascript">
+              $(function() {
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                $('#img_prev').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                $("#user_img").change(function(){
+                    readURL(this);
+                });
+              });
+            </script>
           </div>
 
           <%= f.label :cover_image_name, "背景画像" %>
-          <%= f.file_field :cover_image_name, class: 'form-control'%>
+          <%= f.file_field :cover_image_name, id: :cover_img, class: 'form-control'%>
           <div class="edit-cover-image"> 
             <% if @user.cover_image_name? %>
-                <%= image_tag @user.cover_image_name.url, alt: "cover-image", class: "sake-image" %>
+                <%= image_tag @user.cover_image_name.url, alt: "cover-image", id: :cover_img_prev, class: "sake-image" %>
             <% else %>
-              <%= image_tag("cover_default.jpg", alt: "user-image", class: "sake-image") %>
+              <%= image_tag("cover_default.jpg", alt: "user-image", id: :cover_img_prev, class: "sake-image") %>
             <% end %>
+            <script type="text/javascript">
+              $(function() {
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                $('#cover_img_prev').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                $("#cover_img").change(function(){
+                    readURL(this);
+                });
+              });
+            </script>
           </div>
 
           <%= f.label :email %>

@@ -29,7 +29,7 @@
        <ul>
         <li class="main-li">
           <%= link_to("レビュー", "#" )%>
-          <span>1</span>
+          <%# <span><%= post_reviews.content %></span> %>
         </li>
         <li class="main-li">
           <%= link_to("ブランド", "#" )%>
@@ -43,51 +43,24 @@
           <%= link_to("フォロワー", "#" )%>
           <span>10</span>
         </li>
+        <li class="main-li">
+          <%= link_to("レビューを投稿する", post_review_form_path )%>
+        </li>
 
        </ul>
       </nav>
       </div>
     </section>
   </div>
-  <ul class="review-content">
 
+    <% if @user.post_reviews.any? %>
+      <h3>お酒のレビュー (<%= @user.post_reviews.count %>)</h3>
+      <ul class="review-content">
+        <%= render @post_reviews  %>
+      </ul>
+      <%= will_paginate @post_reviews,  previous_label: '&lt 前へ', next_label: '次へ &gt'%>
+    <% end %>
 
-    <li class="review-content-i main-li">
-      <h4>アサヒスーパードライ</h4>
-      <div class="review-image">
-        <%= link_to image_tag("superdry.jpg", alt: "superdry", class: "sake-image-i") %>
-      </div>
-      <div class="review-nav list-flex">
-        <div class="review-user-image">
-          <% if @user.image_name? %>
-            <%= image_tag @user.image_name.url, alt: "user-image", class: "sake-image" %>
-          <% else %>
-            <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
-          <% end %>
-        </div>
-        <div class="review-user-star">
-          <p><a href="#"><%= @user.name %></a></p>
-          <div class="review-star">
-            <%= link_to image_tag("star-on.png", alt: "1", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "2", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "3", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "4", class: "") %>
-            <%= link_to image_tag("star-on.png", alt: "5", class: "") %>
-          </div>
-        </div>
-      </div>
-      <div class="review-comment">
-        <p>最高の一品。また飲みたいと思った今日このごろ</p>
-      </div>
-    </li>
-
-   
-
-  
-   
-    
-
-  </ul>
   <p class="sake-log-more">
     <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
   </p>

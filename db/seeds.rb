@@ -29,3 +29,9 @@ User.create!(name:  name,
     password:              password,
     password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  content = "最高の一品。また飲みたいと思った今日このごろ"
+  users.each { |user| user.post_reviews.create!(content: content)}
+end

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/post_review_form', to: 'post_reviews#post_review_form'
   resources :users
   resources :guest_sessions, only: :create
+  resources :post_reviews, only: [:create, :destroy]
 end

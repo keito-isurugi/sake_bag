@@ -1,0 +1,31 @@
+    <li class="review-content-i main-li">
+      <h4>アサヒスーパードライ</h4>
+      <div class="review-image">
+        <%= link_to image_tag("superdry.jpg", alt: "superdry", class: "sake-image-i") %>
+      </div>
+      <div class="review-nav list-flex">
+        <div class="review-user-image">
+            <% if @user.image_name? %>
+              <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+            <% else %>
+              <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+            <% end %>
+        </div>
+        <div class="review-user-star">
+          <p><%= link_to post_review.user.name, post_review.user %></p>
+          <div class="review-star">
+            <%= link_to image_tag("star-on.png", alt: "1", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "2", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "3", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "4", class: "") %>
+            <%= link_to image_tag("star-on.png", alt: "5", class: "") %>
+          </div>
+        </div>
+      </div>
+      <div class="review-comment">
+        <p><%= post_review.content %></p>
+      </div>
+    </li>
+
+
+

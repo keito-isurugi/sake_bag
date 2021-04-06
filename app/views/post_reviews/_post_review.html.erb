@@ -15,6 +15,7 @@
       </div>
 
       <div class="review-nav list-flex">
+
         <div class="review-user-image">
             <% if @user.image_name? %>
               <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
@@ -22,21 +23,23 @@
               <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
             <% end %>
         </div>
+
         <div class="review-user-star">
-          <p><%= link_to post_review.sake_rate, post_review.user %>点</p>
+          <p><%= post_review.sake_rate %>点</p>
           <div class="review-star" id="star<%= post_review.id%>"></div>
           <script>
-          $('#star<%= post_review.id%>').raty({
+          $('#star<%= post_review.id %>').raty({
             size      : 36,
             starOff   : '<%= asset_path('star-off.png') %>',
             starOn    : '<%= asset_path('star-on.png') %>',
             starHalf  : '<%= asset_path('star-half.png') %>',
             half      : true,
-            readOnly: true,
-            score: <%= post_review.sake_rate %>,
+            readOnly  : true,
+            score     : <%= post_review.sake_rate %>
           });
-        </script>
+          </script>
         </div>
+
       </div>
 
       <div class="review-comment">

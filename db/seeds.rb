@@ -31,7 +31,13 @@ User.create!(name:  name,
 end
 
 users = User.order(:created_at).take(6)
-50.times do
+35.times do
+  sake_name = "アサヒスーパードライ"
+  sake_rate = 4.0
   content = "最高の一品。また飲みたいと思った今日このごろ"
-  users.each { |user| user.post_reviews.create!(content: content)}
+  users.each { |user| user.post_reviews.create!(
+    content: content,
+    sake_name: sake_name,
+    sake_rate: sake_rate
+    )}
 end

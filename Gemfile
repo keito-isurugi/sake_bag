@@ -73,3 +73,4 @@ gem 'rmagick'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'aws-sdk-s3',              '1.48.0', require: false

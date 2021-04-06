@@ -37,4 +37,8 @@ class User < ApplicationRecord
   def forget
     update_attribute(:remember_digest, nil)
   end
+
+  def feed 
+    Post_reviews.where("user_id = ?", id)
+  end
 end

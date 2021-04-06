@@ -3,4 +3,5 @@ class PostReview < ApplicationRecord
   default_scope -> { order(created_at: :desc)}
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }
+  mount_uploader :sake_image_name, ImageUploader #画像アップロード用
 end

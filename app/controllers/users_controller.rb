@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+
+
   def index  
     @users = User.paginate(page: params[:page])
   end
@@ -10,6 +12,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post_reviews = @user.post_reviews.paginate(page: params[:page])
+    if logged_in?
+      @post_review = current_user.post_reviews.build
+      # @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def new

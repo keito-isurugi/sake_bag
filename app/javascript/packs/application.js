@@ -13,6 +13,8 @@ Turbolinks.start()
 ActiveStorage.start()
 require("jquery")
 import "bootstrap"
+window.$ = window.jQuery = require('jquery'); 
+require('packs/raty')
 
 // var emptyCells, i;
 

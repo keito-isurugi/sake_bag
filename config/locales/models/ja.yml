@@ -8,3 +8,15 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: 確認用パスワード
+    models:
+      post_review: レビュー
+    attributes:
+      post_review:
+        sake_type: お酒の種類
+        sake_image_name: 画像
+        sake_maker: メーカー
+        sake_name: 名称
+        sake_price: 価格
+        sake_amount: 量
+        sake_rate: 評価 
+        sake_content: コメント

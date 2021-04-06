@@ -1,1 +1,75 @@
-<h1>レビューフォーム</h1>
+<% provide(:title, 'レビュー投稿') %>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+        <%= form_with(model: @post_review, local: true) do |f| %>
+          <h2 class="new-h2">レビュー投稿</h2>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :sake_type %>
+          <%= f.text_field :sake_type, class: 'form-control' %>
+
+          <%= f.label :sake_image_name %>
+          <%= f.file_field :sake_image_name, id: :user_img, class: 'form-control'%>
+          <div class="edit-user-image"> 
+            <% if @post_review.sake_image_name? %>
+                <%= image_tag @post_review.sake_image_name.url, alt: "user-image", id: :img_prev, class: "sake-image" %>
+            <% else %>
+              <%= image_tag("noimage.jpg", alt: "sake-image", id: :img_prev, class: "sake-image") %>
+            <% end %>
+            <script type="text/javascript">
+              $(function() {
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                $('#img_prev').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                $("#user_img").change(function(){
+                    readURL(this);
+                });
+              });
+            </script>
+          </div>
+
+          <%= f.label :sake_maker %>
+          <%= f.text_field :sake_maker, class: 'form-control' %>
+
+          <%= f.label :sake_name %>
+          <%= f.text_field :sake_name, class: 'form-control' %>
+
+          <%= f.label :sake_price%>
+          <%= f.text_field :sake_price, class: 'form-control' %>
+
+          <%= f.label :sake_amount%>
+          <%= f.text_field :sake_amount, class: 'form-control' %>
+
+          <!-- 評価 -->
+          <div class="form-group row" id="star">
+            <%= f.label :sake_rate, class:'col-md-3 col-form-label' %>
+            <%= f.hidden_field :sake_rate, id: :review_star %>
+          </div>
+          <!-- 評価javascript -->
+          <script>
+          $('#star').raty({
+            size     : 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            scoreName: 'post[sake_rate]',
+            half: true,
+          });
+          </script>  
+
+          <%= f.label :content%>
+          <%= f.text_field :content, class: 'form-control' %>
+
+          <%= f.submit "レビューを記録", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+  </div>
+</div>

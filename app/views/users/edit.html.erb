@@ -5,7 +5,7 @@
     <div class="center">
         <%= form_with(model: @user, local: true) do |f| %>
           <h2 class="new-h2">マイページ管理</h2>
-          <%= render 'shared/error_messages' %>
+          <%= render 'shared/error_messages', object: f.object %>
 
           <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control' %>

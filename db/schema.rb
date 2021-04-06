@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_083717) do
+ActiveRecord::Schema.define(version: 2021_04_05_083537) do
 
   create_table "post_reviews", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sake_image_name"
+    t.string "sake_type"
+    t.string "sake_maker"
+    t.string "sake_name"
+    t.string "sake_price"
+    t.float "sake_rate"
+    t.string "sake_amount"
     t.index ["user_id", "created_at"], name: "index_post_reviews_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_post_reviews_on_user_id"
   end

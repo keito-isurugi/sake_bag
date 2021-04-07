@@ -1,0 +1,13 @@
+<% provide(:title, @title) %>
+
+<div class="index-main">
+  <div class="col-me-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+     <ul class="users follow">
+      <%= render @users %>
+     </ul>
+      <%= will_paginate %>
+     <% end %>
+  </div>
+</div>

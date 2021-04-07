@@ -49,21 +49,24 @@
           <%= f.text_field :sake_amount, class: 'form-control' %>
 
           <!-- 評価 -->
+          <script>
+          </script>
+   
           <div class="form-group row" id="star">
             <%= f.label :sake_rate, class:'col-md-3 col-form-label' %>
             <%= f.hidden_field :sake_rate, id: :review_star %>
+            <script>
+              $('#star').raty({
+                size     : 40,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                starHalf: '<%= asset_path('star-half.png') %>',
+                scoreName: 'post_review[sake_rate]',
+                half: true,
+              });
+            </script>  
           </div>
           <!-- 評価javascript -->
-          <script>
-          $('#star').raty({
-            size     : 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            scoreName: 'post_review[sake_rate]',
-            half: true,
-          });
-          </script>  
 
           <%= f.label :content%>
           <%= f.text_field :content, class: 'form-control' %>

@@ -28,6 +28,7 @@
           <p><%= post_review.sake_rate %>点</p>
           <div class="review-star" id="star<%= post_review.id%>"></div>
           <script>
+          $('#star<%= post_review.id %>').empty(); 
           $('#star<%= post_review.id %>').raty({
             size      : 36,
             starOff   : '<%= asset_path('star-off.png') %>',

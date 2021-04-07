@@ -1,5 +1,6 @@
 <% provide(:title, "マイページ") %>
 
+ <%= render 'follow_form' if logged_in? %>
 <div class="main-show">
   <div class="container">
     <section class="user-profile">
@@ -36,12 +37,20 @@
           <span>1</span>
         </li>
         <li class="main-li">
-          <%= link_to("フォロー", "#" )%>
-          <span>10</span>
+          <a href="<%= following_user_path(@user) %>">
+            フォロー中
+            <strong id="following" class="stat">
+              <%= @user.following.count %>
+            </strong>
+          </a>
         </li>
         <li class="main-li">
-          <%= link_to("フォロワー", "#" )%>
-          <span>10</span>
+          <a href="<%= followers_user_path(@user) %>">
+            フォロワー
+            <strong id="followers" class="stat">
+              <%= @user.followers.count %>
+            </strong>
+          </a>
         </li>
         <li class="main-li">
           <%= link_to("レビューを投稿する", post_review_form_path )%>
@@ -65,5 +74,6 @@
     <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
   </p>
 </div>
+
 
 

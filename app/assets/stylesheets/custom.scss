@@ -117,11 +117,22 @@ p {
   }
 }
 
+.foot_support{
+  padding: 0;
 
+}
 
 .main-li {
   list-style: none;
   display: inline-block;
+}
+
+@media screen and(max-width: 767px) {
+  .main-li{
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(77, 75, 75);
+  }
 }
 
 .list-flex {
@@ -218,6 +229,11 @@ p {
     width: 100%;
   }
 }
+
+//-----------------------------------------------
+//footer
+
+
 
 
 

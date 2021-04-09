@@ -9,8 +9,6 @@ body {
   background-color: #E6E6E6;
 }
 
-
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,19 +62,6 @@ p {
 //-----------------------------------------------
 //main
 
-// .main-image {
-//   width: 100vw;
-//   position: relative;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   background-color: #E6E6E6;
-//   padding: 40px;
-//     > .image {
-//       width: 100%;
-//       height: 541px;
-//       margin: 0 auto;
-//     }
-// }
 
 .sake-image {
   width: 100%;
@@ -449,6 +434,7 @@ footer {
 
 .foot_support{
   padding: 0;
+  margin-bottom: 0;
 }
 
 .footer-li {

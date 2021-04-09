@@ -4,8 +4,6 @@
 
 //-----------------------------------------------
 //共通
-.container {
-}
 
 body {
   background-color: #E6E6E6;
@@ -108,7 +106,7 @@ p {
   }
 }
 
-.faeture {
+.feature {
   margin-bottom: 30px;
   > h3 {
     font-size: 20px;
@@ -117,23 +115,12 @@ p {
   }
 }
 
-.foot_support{
-  padding: 0;
-
-}
-
 .main-li {
   list-style: none;
   display: inline-block;
 }
 
-@media screen and(max-width: 767px) {
-  .main-li{
-    display: block;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(77, 75, 75);
-  }
-}
+
 
 .list-flex {
   display: flex;
@@ -154,24 +141,6 @@ p {
   justify-content: center;
   padding: 0;
 }
-
-// .cell.is-empty {
-//   height: 0;
-//   padding-top: 0;
-//   padding-bottom: 0;
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
-
-// .review-content::after{
-//   display: block;
-//   content:"";
-//   width: 260px;
-//   height: 380px;
-//   padding: 10px 0;
-//   margin: 10px;
-// }
-
 
 
 .review-content-i {
@@ -229,11 +198,6 @@ p {
     width: 100%;
   }
 }
-
-//-----------------------------------------------
-//footer
-
-
 
 
 
@@ -478,16 +442,35 @@ footer {
 }
 
 
-.foot_support > li {
-  margin: 10px;
-}
-
-.foot_support {
-  margin-bottom: 0;
-}
-
 .copyright {
-  margin: 10px 0;
+  margin-bottom: 20px;
+}
+
+
+.foot_support{
+  padding: 0;
+}
+
+.footer-li {
+  list-style: none;
+  display: inline-block;
+  margin: 15px;
+  > a {
+    display: block;
+    color: #C4C7CC;
+    &:hover {
+      text-decoration: none;
+      color: whitesmoke;
+    }
+  }
+}
+
+@media screen and(max-width: 767px) {
+  .footer-li{
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(77, 75, 75);
+  }
 }
 
 

@@ -28,39 +28,57 @@
           </div>
       </div>
 
-      <nav class="user-tab row" style="margin:0;">
-        <div class="user-tab-nav ">
-          <a href="#">
-          レビュー
-           <strong><%= @user.post_reviews.count %></strong>
-           </a>
-        </div>
-        <div class="user-tab-nav ">
-          <a href="#">
-          レビュー
-           <strong>1</strong>
-           </a>
-        </div>
-        <div class="user-tab-nav ">
-          <a href="<%= following_user_path(@user) %>">
-            フォロー中
-            <strong id="following" class="stat">
-              <%= @user.following.count %>
-            </strong>
-          </a>
-        </div>
-        <div class="user-tab-nav ">
-          <a href="<%= followers_user_path(@user) %>">
-            フォロワー
-            <strong id="followers" class="stat">
-              <%= @user.followers.count %>
-            </strong>
-          </a>
-        </div>
-        <div class="user-tab-nav " style="border-right: 1px solid #ddd;">
-          <%= link_to("レビューを投稿する", post_review_form_path )%>
-        </div>
-      </nav>
+      <script>  
+            $(function(){
+        $('.title').click(function(){
+          $(this).next().slideToggle();
+        });
+      });
+
+
+      $(window).on('resize', function() {
+	if( 'none' == $('.title').css('pointer-events') ){
+		$('.toggle').attr('style','');
+	};
+});
+      </script>
+
+
+      <p class="title">メニュー▼</p>
+      <ul  class="user-tab row toggle" style="margin:0;">
+            <div class="user-tab-nav">
+              <a href="#">
+              レビュー
+              <strong><%= @user.post_reviews.count %></strong>
+              </a>
+            </div>
+            <div class="user-tab-nav ">
+              <a href="#">
+              レビュー
+              <strong>1</strong>
+              </a>
+            </div>
+            <div class="user-tab-nav ">
+              <a href="<%= following_user_path(@user) %>">
+                フォロー中
+                <strong id="following" class="stat">
+                  <%= @user.following.count %>
+                </strong>
+              </a>
+            </div>
+            <div class="user-tab-nav ">
+              <a href="<%= followers_user_path(@user) %>">
+                フォロワー
+                <strong id="followers" class="stat">
+                  <%= @user.followers.count %>
+                </strong>
+              </a>
+            </div>
+            <div class="user-tab-nav " style="border-right: 1px solid #ddd;">
+              <%= link_to("レビューを投稿する", post_review_form_path )%>
+            </div>
+
+      </ul>
       </div>
     </section>
   </div>

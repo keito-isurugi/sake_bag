@@ -29,18 +29,17 @@
       </div>
 
       <script>  
-            $(function(){
-        $('.title').click(function(){
-          $(this).next().slideToggle();
+        $(function(){
+          $('.title').click(function(){
+            $(this).next().slideToggle();
+          });
         });
-      });
 
-
-      $(window).on('resize', function() {
-	if( 'none' == $('.title').css('pointer-events') ){
-		$('.toggle').attr('style','');
-	};
-});
+        $(window).on('resize', function() {
+          if( 'none' == $('.title').css('pointer-events') ){
+            $('.toggle').attr('style','');
+          };
+        });
       </script>
 
 

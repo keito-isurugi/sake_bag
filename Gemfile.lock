@@ -121,6 +121,8 @@ GEM
     faker (2.17.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.0)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.9)
@@ -292,6 +294,7 @@ DEPENDENCIES
   carrierwave
   factory_bot_rails (~> 4.10.0)
   faker
+  font-awesome-sass
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)

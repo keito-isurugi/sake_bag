@@ -7,16 +7,16 @@
           <h2 class="new-h2">マイページ管理</h2>
           <%= render 'shared/error_messages', object: f.object %>
 
-          <%= f.label :name %>
+          <%= f.label :name, "ユーザー名" %>
           <%= f.text_field :name, class: 'form-control' %>
 
           <%= f.label :image_name, "プロフィール画像" %>
           <%= f.file_field :image_name, id: :user_img, class: 'form-control'%>
           <div class="edit-user-image"> 
             <% if @user.image_name? %>
-                <%= image_tag @user.image_name.url, alt: "user-image", id: :img_prev, class: "sake-image" %>
+                <%= image_tag @user.image_name.url, alt: "user-image", id: :img_prev, class: "edit-user-image" %>
             <% else %>
-              <%= image_tag("default.png", alt: "user-image", id: :img_prev, class: "sake-image") %>
+              <%= image_tag("default.png", alt: "user-image", id: :img_prev, class: "edit-user-image") %>
             <% end %>
             <script type="text/javascript">
               $(function() {
@@ -40,9 +40,9 @@
           <%= f.file_field :cover_image_name, id: :cover_img, class: 'form-control'%>
           <div class="edit-cover-image"> 
             <% if @user.cover_image_name? %>
-                <%= image_tag @user.cover_image_name.url, alt: "cover-image", id: :cover_img_prev, class: "sake-image" %>
+                <%= image_tag @user.cover_image_name.url, alt: "cover-image", id: :cover_img_prev, class: "edit-cover-image" %>
             <% else %>
-              <%= image_tag("cover_default.jpg", alt: "user-image", id: :cover_img_prev, class: "sake-image") %>
+              <%= image_tag("cover_default.jpg", alt: "user-image", id: :cover_img_prev, class: "edit-cover-image") %>
             <% end %>
             <script type="text/javascript">
               $(function() {
@@ -62,10 +62,10 @@
             </script>
           </div>
 
-          <%= f.label :email %>
+          <%= f.label :email, "メールアドレス" %>
           <%= f.email_field :email, class: 'form-control' %>
 
-          <%= f.label :password %>
+          <%= f.label :password, "パスワード" %>
           <%= f.password_field :password, class: 'form-control' %>
 
           <%= f.label :password_confirmation, "パスワード(確認用)" %>

@@ -218,7 +218,12 @@ p {
   margin: 80px auto;
   padding: 30px;
   background-color: white;
-  
+}
+
+@media screen and(max-width: 992px) {
+  .center{
+    width: 100%;
+  }
 }
 
 .new-h2 {
@@ -296,6 +301,13 @@ input {
   padding-bottom: 40px;
 }
 
+@media screen and(max-width: 992px) {
+  .user-profile{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 .user-profile-body {
   width: 100%;
   height:100%;
@@ -352,8 +364,6 @@ input {
   }
 }
 
-
-
 .user-profile-info {
   position: absolute;
   top: 290px;
@@ -391,9 +401,6 @@ input {
   }
 }
 
-
-
-
 .user-tab {
   width: 100%;
   height: 40px;
@@ -415,24 +422,18 @@ input {
        float: right;
        margin-left: 3px;
      }
-  }
+    }
   }
 
 @media screen and(max-width: 992px) {
   .user-tab{
     height: 210px;
     padding: 0;
-  > .user-tab-nav {
+   > .user-tab-nav {
     width: 100%;
     border: none;
     border-bottom: 1px solid #ddd;
-     > a{
-      
-     }
-     > strong{
-
-     }
-  }
+    }
   }
 }
 
@@ -440,6 +441,7 @@ input {
 	pointer-events: none;
   display: none;
 }
+
 @media screen and (max-width: 992px){
 	.title{
 		pointer-events: all;
@@ -450,26 +452,36 @@ input {
     font-weight: bold;
     height: 35px;
     padding-top: 4px;
-	}
-	
-	.toggle{
+	}	.toggle{
 		display: none;
 	}
 }
 
-
 //-----------------------------------------------
 //マイページ管理
 .edit-user-image{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 992px){
+	.edit-user-image{
+		width: 70px;
+    height: 70px;
+	}
 }
 
 .edit-cover-image{
   width: 100%;
   height: 200px;
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 992px){
+	.edit-cover-image{
+
+	}
 }
 
 
@@ -489,7 +501,7 @@ input {
   justify-content: center;
   margin: 0 auto;
   padding: 0;
-  width: 1000px;
+  width: 100%;
   li {
     border: 1px solid #ccc;
     margin: 10px;
@@ -505,12 +517,19 @@ input {
 }
 
 
-.index-user-image {
+.index-image {
   width: 60px;
   height: 60px;
   margin-right: 10px;
   border: 1px solid #ccc;
 }
+
+.index-user-image{
+  width: 100%;
+  height: 100%;
+}
+
+
 
 .index-user-name > a{
   color: black;
@@ -564,6 +583,4 @@ footer {
     border-bottom: 1px solid rgb(77, 75, 75);
   }
 }
-
-
 

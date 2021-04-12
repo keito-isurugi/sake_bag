@@ -1,9 +1,9 @@
 <li class="index-user">
-  <div class="index-user-image"> 
+  <div class="index-image"> 
     <% if user.image_name? %>
-        <%= image_tag user.image_name.url, alt: "user-image", class: "sake-image"%>
+        <%= image_tag user.image_name.url, alt: "user-image", class: "index-user-image"%>
     <% else %>
-      <%= image_tag("default.png", alt: "user-image", class: "sake-image") %>
+      <%= image_tag("default.png", alt: "user-image", class: "index-user-image") %>
     <% end %>
   </div>
   <div class="index-user-name">

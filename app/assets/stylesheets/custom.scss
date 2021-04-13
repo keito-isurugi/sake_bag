@@ -268,7 +268,7 @@ input {
 
 
 //-----------------------------------------------
-//login
+//ログイン
 
 .new-signup {
   margin-top: 10px;
@@ -290,7 +290,7 @@ input {
 
 
 //-----------------------------------------------
-//show
+//マイページ
 
 .main-show{
   text-align:center;
@@ -536,6 +536,14 @@ input {
   font-size: 15px;
 }
 
+//-----------------------------------------------
+//レビュー投稿
+.post-sake-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
 
 
 

@@ -41,8 +41,12 @@
           };
         });
       </script>
+      
+      <% if @user.comment %>
+         <div class="user-comment"><%= safe_join(@user.comment.split("\n"),tag(:br)) %></div>
+      <% else %>
+      <% end %>
 
-      <div class="user-comment"><%= safe_join(@user.comment.split("\n"),tag(:br)) %></div>
       <p class="title">メニュー▼</p>
       <ul  class="user-tab row toggle" style="margin:0;">
             <div class="user-tab-nav">

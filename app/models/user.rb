@@ -19,6 +19,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   mount_uploader :image_name, ImageUploader #画像アップロード用
   mount_uploader :cover_image_name, ImageUploader #画像アップロード用
+  validates :comment, length: { maximum: 160 }
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

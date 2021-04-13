@@ -2,15 +2,15 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      post_review: レビュー
     attributes:
       user:
         name: ユーザー名
         email: メールアドレス
+        comment: コメント
+        image_name:  プロフィール画像
         password: パスワード
         password_confirmation: 確認用パスワード
-    models:
-      post_review: レビュー
-    attributes:
       post_review:
         sake_type: お酒の種類
         sake_image_name: 画像

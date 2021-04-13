@@ -62,10 +62,13 @@
             </script>
           </div>
 
+          <%= f.label :comment, "コメント" %>
+          <%= f.text_area :comment, class: 'form-control', size: "20x6"%>
+
           <%= f.label :email, "メールアドレス" %>
           <%= f.email_field :email, class: 'form-control' %>
 
-          <%= f.label :password, "パスワード" %>
+          <%= f.label :password, "パスワード(変更しない場合は未入力)" %>
           <%= f.password_field :password, class: 'form-control' %>
 
           <%= f.label :password_confirmation, "パスワード(確認用)" %>

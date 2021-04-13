@@ -2,7 +2,7 @@
 
  <%= render 'follow_form' if logged_in? %>
 <div class="main-show">
-  <div class="container">
+
     <section class="user-profile">
       <div class="user-profile-body"> 
         <div class="cover-profile-image">
@@ -42,7 +42,7 @@
         });
       </script>
 
-
+      <div class="user-comment"><%= safe_join(@user.comment.split("\n"),tag(:br)) %></div>
       <p class="title">メニュー▼</p>
       <ul  class="user-tab row toggle" style="margin:0;">
             <div class="user-tab-nav">
@@ -80,7 +80,7 @@
       </ul>
       </div>
     </section>
-  </div>
+
 
     <% if @user.post_reviews.any? %>
       <h3>お酒のレビュー (<%= @user.post_reviews.count %>)</h3>

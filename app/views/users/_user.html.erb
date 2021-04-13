@@ -6,10 +6,61 @@
       <%= image_tag("default.png", alt: "user-image", class: "index-user-image") %>
     <% end %>
   </div>
-  <div class="index-user-name">
-    <%= link_to user.name, user %>
+
+  <div class="index-content">
+    <div class="index-name-follow">
+      <%# ユーザー名 %>
+      <div class="index-user-name">
+        <%= link_to user.name, user %>
+      </div>
+      
+
+      <%# フォローボタン %>
+      <% unless current_user?(user) %>
+        <div class="index-follow-form ">
+          <% if current_user.following?(user) %>
+            <%# フォロー解除 %>
+            <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+              <div><%= hidden_field_tag :followed_id, user.id %></div>
+              <%= f.submit "フォロー中", class: "index-follow-btn index-unfollow-btn" %>
+              <%= f.submit "フォロー解除", class: "index-unfollow-hover" %>
+              <script>
+                $(function(){
+                  $('.index-unfollow-btn').hover(function(){
+                    $('.index-unfollow-btn').hide();
+                    $('.index-unfollow-hover').show();
+                  },
+                  function () {
+                    $('.index-unfollow-hover').hide();
+                    $('.index-unfollow-btn').show();
+                  });
+                });
+              </script>
+            <% end %>
+          <% else %>
+            <%# フォロー %>
+            <%= form_with(model: current_user.active_relationships.build, remote: true) do |f| %>
+              <div><%= hidden_field_tag :followed_id, user.id %></div>
+              <%= f.submit "フォロー", class: "btn-primary index-follow-btn" %>
+            <% end %>
+          <% end %>
+        </div>
+      <% else %>
+      <% end %>
+    </div>
+
+    <%# コメント %>
+    <% if user.comment %>
+      <div class="index-user-comment"><%= safe_join(user.comment.split("\n"),tag(:br)) %></div>
+    <% else %>
+    <% end %>
+
+    <% if current_user.admin? && !current_user?(user) %>
+      <div style="text-align:right;">
+       <%= link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"}%>
+      </div>
+    <% end %>
   </div>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "削除", user, method: :delete, data: {confirm: "本当に削除しますか？"} %>
-  <% end %>
+
+  
 </li>

@@ -25,8 +25,10 @@ User.create!(name:  "ゲストユーザー",
 name  = Faker::Name.name
 email = "example-#{n+1}@gmail.com"
 password = "password"
+comment = "てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。"
 User.create!(name:  name,
     email: email,
+    comment: comment,
     password:              password,
     password_confirmation: password)
 end

@@ -369,15 +369,20 @@ input {
   background-color: rgba(0, 0, 0, 0.5);
   width: 700px;
   padding: 20px;
+  display: flex;
 }
 
 @media screen and(max-width: 992px) {
   .user-profile-info{
-    width: 200px;
+    width: 220px;
+    height: 65px;
     position: absolute;
-    top: 155px;
+    top: 125px;
     left: 110px;
     padding: 10px;
+    display: block;
+    text-align: left;
+    padding-left: 20px;
   }
 }
 
@@ -386,17 +391,18 @@ input {
   color: white;
   letter-spacing: 1px;
   margin: 0;
+  margin-right: 20px;
   text-align: left;
 }
 
 @media screen and(max-width: 992px) {
   .user-profile-name{
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0;
-    width: 200px;
     margin: 0;
+    margin-bottom: 5px;
     overflow: hidden;
-    
+    padding: 0 0 5px 5px;
   }
 }
 
@@ -516,13 +522,14 @@ input {
   li {
     border: 1px solid #ccc;
     margin: 10px;
+    padding: 10px;
   }
 }
 
 .index-user{
   display: flex;
   background-color: white;
-  width: 250px;
+  width: 330px;
   height: 100%;
   padding: 0;
 }
@@ -540,11 +547,40 @@ input {
   height: 100%;
 }
 
+.index-content{
+  display: block;
+  text-align: left;
+}
 
 
-.index-user-name > a{
+.index-name-follow {
+ display: flex;
+ width: 100%;
+ height: 20px;
+ margin-bottom: 5px;
+}
+
+.index-user-name {
+  width: 130px;
+  height: 20px;
+  text-align: left;
+> a{
   color: black;
   font-size: 15px;
+  }
+}
+
+.index-follow-form {
+  width: 100px;
+  height: 20px;
+}
+
+.index-follow-form {
+  text-align: left;
+}
+
+.index-user-comment {
+  width: 230px;
 }
 
 //-----------------------------------------------
@@ -556,9 +592,91 @@ input {
   margin-bottom: 10px;
 }
 
+//-----------------------------------------------
+//フォローボタン(ユーザーページ) 
+.follow-btn {
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 4px;
+  width: 150px;
+  font-weight: bold;
+}
 
 
+.unfollow-hover{
+  display: none;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  border-radius: 4px;
+  width: 150px;
+  font-weight: bold;
+  background-color: rgb(247, 41, 110);
+  color: white;
+}
 
+  @media screen and(max-width: 992px) {
+    .follow-btn{
+      padding: 1px 5px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      width: 100px;
+    }
+  }
+
+  @media screen and(max-width: 992px) {
+    .unfollow-hover{
+      padding: 1px 5px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      width: 100px;
+      background-color: rgb(247, 41, 110);
+      color: white;
+    }
+  }
+
+  //-----------------------------------------------
+//フォローボタン(ユーザー一覧) 
+.index-follow-btn {
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  width: 100px;
+  font-weight: bold;
+}
+
+
+.index-unfollow-hover{
+  display: none;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  width: 100px;
+  font-weight: bold;
+  background-color: rgb(247, 41, 110);
+  color: white;
+}
+
+  @media screen and(max-width: 992px) {
+    .index-follow-btn{
+     
+    }
+  }
+
+  @media screen and(max-width: 992px) {
+    .index-unfollow-hover{
+      
+    }
+  }
 
 
 //-----------------------------------------------

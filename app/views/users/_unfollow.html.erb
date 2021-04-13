@@ -1,5 +1,21 @@
 <%= form_with(model: current_user.active_relationships.find_by(followed_id: @user.id),
              html: { method: :delete }, remote: true) do |f| %>
   <div><%= hidden_field_tag :followed_id, @user.id %></div>
-  <%= f.submit "フォロー解除", class: "btn" %>
+  <%= f.submit "フォロー中", class: "follow-btn unfollow-btn" %>
+  <%= f.submit "フォロー解除", class: "unfollow-hover" %>
+
+  <script>
+    $(function(){
+      $('.unfollow-btn').hover(function(){
+        $('.unfollow-btn').hide();
+        $('.unfollow-hover').show();
+      },
+      function () {
+        $('.unfollow-hover').hide();
+        $('.unfollow-btn').show();
+      });
+    });
+
+  </script>
+
 <% end %>

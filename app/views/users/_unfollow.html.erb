@@ -2,9 +2,10 @@
              html: { method: :delete }, remote: true) do |f| %>
   <div><%= hidden_field_tag :followed_id, @user.id %></div>
   <%= f.submit "フォロー中", class: "follow-btn unfollow-btn" %>
-  <%= f.submit "フォロー解除", class: "unfollow-hover" %>
 
-  <script>
+  <%# スマホで操作不能のため未実装 %>
+  <%#= f.submit "フォロー解除", class: "unfollow-hover" %>
+  <%# <script>
     $(function(){
       $('.unfollow-btn').hover(function(){
         $('.unfollow-btn').hide();
@@ -15,7 +16,6 @@
         $('.unfollow-btn').show();
       });
     });
-
-  </script>
+  </script> %>
 
 <% end %>

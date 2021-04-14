@@ -601,9 +601,22 @@ input {
   border-radius: 4px;
   width: 150px;
   font-weight: bold;
+  display: inline-block;
+
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  line-height: 1.428571429;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
-
 
 @media screen and(max-width: 992px) {
   .follow-btn{
@@ -629,11 +642,11 @@ input {
 //   color: white;
 // }
 
-  // @media screen and(max-width: 992px) {
-  //   .unfollow-btn{
-  //     background-color: #bbb;
-  //   }
-  // }
+  @media screen and(max-width: 992px) {
+    .unfollow-btn{
+      background-color: #bbb;
+    }
+  }
 
   // @media screen and(max-width: 992px) {
   //   .unfollow-hover{

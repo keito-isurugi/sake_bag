@@ -20,7 +20,7 @@
         <div class="index-follow-form ">
           <% if current_user.following?(user) %>
             <%# フォロー解除 %>
-            <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+            <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, local:false) do |f| %>
               <div><%= hidden_field_tag :followed_id, user.id %></div>
               <div class="index-unfollow">
                 <%= f.submit "フォロー中", class: "index-follow-btn index-unfollow-btn" %>
@@ -42,7 +42,7 @@
             <% end %>
           <% else %>
             <%# フォロー %>
-            <%= form_with(model: current_user.active_relationships.build, remote: true) do |f| %>
+            <%= form_with(model: current_user.active_relationships.build, local:false) do |f| %>
               <div><%= hidden_field_tag :followed_id, user.id %></div>
               <%= f.submit "フォロー", class: "btn-primary index-follow-btn" %>
             <% end %>

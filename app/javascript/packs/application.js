@@ -11,8 +11,8 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require("jquery")
-import "bootstrap"
+require("jquery") //jQueryを追加
+require("bootstrap") //Bootstrapを追加
 window.$ = window.jQuery = require('jquery'); 
 require('packs/raty')
 

@@ -1,4 +1,5 @@
-    <li class="review-content-i main-li">
+ 
+ <li class="review-content-i main-li">
 
     <% if post_review.sake_name? %>
       <h4><%= post_review.sake_name %></h4>
@@ -18,21 +19,22 @@
 
         <div class="review-user-image">
             <% if @user.image_name? %>
-              <%= link_to image_tag(post_review.user.image_name.url, alt: "user-image", class: "sake-image-i"), user_path %>
+              <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
             <% else %>
-              <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), user_path %>
+              <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
             <% end %>
         </div>
 
         <div class="review-user-star">
-          <p class="review-user-star-name"><%= link_to post_review.user.name, post_review.user %></p>
           <% if post_review.sake_rate == nil %>
+            <p>0点</p>
             <%= image_tag("star-off.png", alt: "star-off", class: "") %>
             <%= image_tag("star-off.png", alt: "star-off", class: "") %>
             <%= image_tag("star-off.png", alt: "star-off", class: "") %>
             <%= image_tag("star-off.png", alt: "star-off", class: "") %>
             <%= image_tag("star-off.png", alt: "star-off", class: "") %>
           <% else %>
+            <p><%= post_review.sake_rate %>点</p>
             <div class="review-star" id="star<%= post_review.id%>"></div>
             <script>
             $('#star<%= post_review.id %>').empty(); 
@@ -56,6 +58,3 @@
       </div>
 
     </li>
-
-
-

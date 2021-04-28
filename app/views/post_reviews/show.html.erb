@@ -1,0 +1,79 @@
+<% provide(:title, 'レビュー詳細') %>
+
+<div class="review-show center">
+  <h3>レビュー詳細</h3>
+    <div class="review-show-user">
+      <div class="index-image">
+        <% if @user.image_name? %>
+          <%= link_to image_tag(@post_review.user.image_name.url, alt: "user-image", class: "index-user-image"), @user %>
+        <% else %>
+          <%= link_to image_tag("default.png", alt: "user-image", class: "index-user-image"), @user %>
+        <% end %>
+      </div>
+      <div class="user-name">
+        <%= link_to @post_review.user.name, @user %>
+      </div>
+    </div>
+
+  <div class="review-show-content">
+    <p>名　　前：<%= @post_review.sake_name %></p>
+    <p>種　　類：<%= @post_review.sake_type %></p>
+    <p>メーカー：<%= @post_review.sake_maker %></p>
+    <!-- 評価 -->
+
+    <div class="review-user-star review-show-star">
+      <p>評　　価：</p>
+      <div class="review-show-star-2">
+        <% if @post_review.sake_rate == nil %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+        <% else %>
+          <div class="review-star" id="star<%= @post_review.id%>"></div>
+          <script>
+          $('#star<%= @post_review.id %>').empty(); 
+          $('#star<%= @post_review.id %>').raty({
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            starHalf  : '<%= asset_path('star-half.png') %>',
+            half      : true,
+            readOnly  : true,
+            score     : <%= @post_review.sake_rate %>
+          });
+          </script>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="review-show-comment">
+      <p class="review-show-comment-2">−コメント−</p>
+      <p><%= @post_review.content %></p>
+    </div>
+
+    <div class="review-image review-show-image">
+      <% if @post_review.sake_image_name? %>
+        <%= image_tag @post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i" %>
+      <% else %>
+        <%= image_tag "noimage.jpg", alt: "sake-image", class: "sake-image-i" %>
+      <% end %>
+    </div>
+  </div>
+
+<div class="review-show-likes-bm-edit-delete">
+  <div class="review-show-likes-bm">
+    <p>いいね！</p>
+    <p>ブックマーク</p>
+  </div>
+   <% if current_user?(@user) %>
+    <div class="review-show-edit-delete">
+      <%= link_to "編集", edit_post_review_path %>
+      <%= link_to "削除", @post_review, method: :delete, data: {confirm: "本当に削除しますか？"}%>
+    </div>
+  <% else %>
+  <% end %>
+</div>
+
+</div>

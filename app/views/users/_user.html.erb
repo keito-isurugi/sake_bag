@@ -15,46 +15,46 @@
       </div>
       
 
-      <%# フォローボタン %>
-      <% unless current_user?(user) %>
-        <div class="index-follow-form ">
-          <% if current_user.following?(user) %>
-            <%# フォロー解除 %>
-            <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, local:false) do |f| %>
-              <div><%= hidden_field_tag :followed_id, user.id %></div>
-              <div class="index-unfollow">
-                <%= f.submit "フォロー中", class: "index-follow-btn index-unfollow-btn" %>
-                <%= f.submit "フォロー解除", class: "index-unfollow-hover" %>
-              </div>
-              <script>
-                $('.index-unfollow').hover(
-                  function(){
-                    console.log("aaaa");
-                    $(this).find('.index-unfollow-btn').hide();
-                    $(this).find('.index-unfollow-hover').show();
-                  },
-                  function () {
-                    $(this).find('.index-unfollow-btn').show();
-                    $(this).find('.index-unfollow-hover').hide();
-                  }
-                );
-              </script>
-            <% end %>
+      <%# フォローボタン 非同期通信未実装%>
+       <% unless current_user?(user) %>
+            <div class="index-follow-form">
+              <% if current_user.following?(user) %>
+                <%# フォロー解除 %>
+                 <%= form_with(model: current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }) do |f| %>
+                  <div><%= hidden_field_tag :followed_id, user.id %></div>
+                  <div class="index-unfollow">
+                    <%= f.submit "フォロー中", class: "index-follow-btn index-unfollow-btn" %>
+                    <%= f.submit "フォロー解除", class: "index-unfollow-hover" %>
+                  </div>
+                  <script>
+                    $('.index-unfollow').hover(
+                      function(){
+                        $(this).find('.index-unfollow-btn').hide();
+                        $(this).find('.index-unfollow-hover').show();
+                      },
+                      function () {
+                        $(this).find('.index-unfollow-btn').show();
+                        $(this).find('.index-unfollow-hover').hide();
+                      }
+                    );
+                  </script>
+                <% end %>
+              <% else %>
+                <%# フォロー %>
+                  <%= form_with(model: current_user.active_relationships.build) do |f| %>
+                  <div><%= hidden_field_tag :followed_id, user.id %></div>
+                  <%= f.submit "フォロー", class: "btn-primary index-follow-btn" %>
+                <% end %>
+              <% end %>
+            </div>
           <% else %>
-            <%# フォロー %>
-            <%= form_with(model: current_user.active_relationships.build, local:false) do |f| %>
-              <div><%= hidden_field_tag :followed_id, user.id %></div>
-              <%= f.submit "フォロー", class: "btn-primary index-follow-btn" %>
-            <% end %>
           <% end %>
         </div>
-      <% else %>
-      <% end %>
-    </div>
 
     <%# コメント %>
     <% if user.comment %>
-      <div class="index-user-comment"><%= safe_join(user.comment.split("\n"),tag(:br)) %></div>
+      <div class="index-user-comment">
+      <%= safe_join(user.comment.split("\n"),tag(:br)) %></div>
     <% else %>
     <% end %>
 

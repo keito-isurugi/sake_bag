@@ -1,0 +1,13 @@
+<% unless current_user?(@user) %>
+    <div class="index-follow-form " id="follow_form_<%= user.id %>">
+      <% if current_user.following?(@user) %>
+        <%# フォロー解除 %>
+        <%= render 'index_unfollow' %>
+      <% else %>
+        <%# フォロー %>
+        <%= render 'index_follow' %>
+      <% end %>
+    </div>
+  <% else %>
+  <% end %>
+</div>

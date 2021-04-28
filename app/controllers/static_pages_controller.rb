@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
+
   def home
+    @index_post_reviews = PostReview.paginate(page: params[:page])
+    @users = User.all
   end
 
   def help
@@ -16,5 +19,4 @@ class StaticPagesController < ApplicationController
 
   def privacy_policy
   end
-
 end

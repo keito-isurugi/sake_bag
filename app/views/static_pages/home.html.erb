@@ -47,9 +47,9 @@
 
 <section class="main-review">
   <h1>お酒レビュー</h1>
-
+  
   <ul class="review-content">
-    <% @index_post_reviews.each do |post_review| %>
+    <% @index_post_reviews.first(12).each do |post_review| %>
       <li class="review-content-i main-li">
 
     <% if post_review.sake_name? %>
@@ -112,7 +112,7 @@
   </ul>
 
   <div class="sake-log-more">
-    <%= link_to("もっと見る", "#", class: "btn btn-lg btn-primary") %>
+    <%= link_to("もっと見る", post_reviews_path, class: "btn btn-lg btn-primary") %>
   </div>
 
 </section>

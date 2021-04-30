@@ -18,6 +18,7 @@ class PostReviewsController < ApplicationController
   def show 
     @post_review = PostReview.find(params[:id])
     @user = @post_review.user
+    @like = Like.new
   end
 
   def index

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :post_reviews, only: [:index, :show, :create] do
+    resources :likes, only: [:create, :destroy]
+  end
   resources :users
   resources :post_reviews
   resources :guest_sessions, only: :create

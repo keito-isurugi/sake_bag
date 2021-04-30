@@ -1,0 +1,15 @@
+<% if logged_in? %>
+  <% unless @post_review.like_user(current_user.id).blank? %>
+    <%= link_to post_like_path(post_review_id: @post_review.id, id: @post_review.likes[0].id), method: :delete, local: false do %>
+      <div class="vertical_like">
+        <%= image_tag "icon_red_heart.png", size: '20x20' %>
+      </div>
+    <% end %>
+  <% else %>
+      <%= link_to post_likes_path(@post_review.id), method: :post_review, local: false do %>
+      <div class="vertical_like">
+        <%= image_tag "icon_heart.png", size: '20x20' %>
+      </div>
+      <% end %>
+    <% end %>
+<% end %>

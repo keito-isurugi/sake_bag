@@ -1,0 +1,72 @@
+<% provide(:title, "いいねしたレビュー一覧") %>
+
+<section class="main-review">
+<h1>いいねしたレビュー一覧</h1>
+  <%= will_paginate @likes %>
+  <ul class="review-content">
+    <% @likes.each do |like| %>
+      <% post_review = PostReview.find_by(id: like.post_review_id) %>
+      <% user = User.find_by(id: post_review.user_id) %>
+      
+      <li class="review-content-i main-li">
+
+    <% if post_review.sake_name? %>
+      <h4><%= post_review.sake_name %></h4>
+    <% else %>
+      <h4><br></h4>
+    <% end %>
+
+      <div class="review-image">
+        <% if post_review.sake_image_name? %>
+          <%= link_to image_tag(post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i"), post_review %>
+        <% else %>
+          <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), post_review %>
+        <% end %>
+      </div>
+
+      <div class="review-nav list-flex">
+
+        <div class="review-user-image">
+            <% if post_review.user.image_name? %>
+              <%= link_to image_tag(post_review.user.image_name.url, alt: "user-image", class: "sake-image-i"), post_review.user %>
+            <% else %>
+              <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), post_review.user %>
+            <% end %>
+        </div>
+
+        <div class="review-user-star">
+          <p class="review-user-star-name"><%= link_to post_review.user.name, post_review.user %></p>
+          <% if post_review.sake_rate == nil %>
+            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <% else %>
+            <div class="review-star" id="star<%= post_review.id%>"></div>
+            <script>
+            $('#star<%= post_review.id %>').empty(); 
+            $('#star<%= post_review.id %>').raty({
+              size      : 36,
+              starOff   : '<%= asset_path('star-off.png') %>',
+              starOn    : '<%= asset_path('star-on.png') %>',
+              starHalf  : '<%= asset_path('star-half.png') %>',
+              half      : true,
+              readOnly  : true,
+              score     : <%= post_review.sake_rate %>
+            });
+            </script>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div class="review-comment">
+        <p><%= link_to post_review.content, post_review %></p>
+      </div>
+
+    </li>
+    <% end %>
+  </ul>
+  <%= will_paginate @likes %>
+</section>

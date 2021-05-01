@@ -58,12 +58,6 @@
               </a>
             </div>
             <div class="user-tab-nav ">
-              <a href="#">
-              レビュー
-              <strong>1</strong>
-              </a>
-            </div>
-            <div class="user-tab-nav ">
               <a href="<%= following_user_path(@user) %>">
                 フォロー中
                 <strong id="following" class="stat">
@@ -77,6 +71,13 @@
                 <strong id="followers" class="stat">
                   <%= @user.followers.count %>
                 </strong>
+              </a>
+            </div>
+            <div class="user-tab-nav ">
+              <%= link_to "いいねしたレビュー", "/users/#{@user.id}/likes" %>
+              <strong>
+                <%= @user.likes.count %>
+              </strong>
               </a>
             </div>
             <% if current_user?(@user) %>

@@ -66,9 +66,11 @@
   <div class="review-show-likes-bm">
 
 <% if current_user.already_liked?(@post_review) %>
-  <%= button_to 'いいねを取り消す', post_review_like_path(@post_review), method: :delete %>
+  <%= link_to image_tag("icon_red_heart.png", size: 20), post_review_like_path(@post_review), method: :delete %>
+  <strong><%= @post_review.likes.count %></strong>
 <% else %>
-  <%= button_to 'いいね', post_review_likes_path(@post_review) %>
+  <%= link_to image_tag("icon_heart.png", size: 20), post_review_likes_path(@post_review), method: :post %>
+  <strong><%= @post_review.likes.count %></strong>
 <% end %>
     
   </div>

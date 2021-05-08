@@ -1,0 +1,6 @@
+<!-- コメント入力フォーム ------------------------------------------------------------>
+<%= form_with(model: [post_review, comment], url: post_review_comments_path(@post_review), local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.text_area :content, class: "form-control" %>
+    <%= f.submit "送信", class: "btn btn-outline-dark comment-submit float-right" %>
+<% end %>

@@ -62,25 +62,37 @@
     </div>
   </div>
 
-<div class="review-show-likes-bm-edit-delete">
-  <div class="review-show-likes-bm">
+  <div class="review-show-likes-bm-edit-delete">
 
-<% if current_user.already_liked?(@post_review) %>
-  <%= link_to image_tag("icon_red_heart.png", size: 20), post_review_like_path(@post_review), method: :delete %>
-  <strong><%= @post_review.likes.count %></strong>
-<% else %>
-  <%= link_to image_tag("icon_heart.png", size: 20), post_review_likes_path(@post_review), method: :post %>
-  <strong><%= @post_review.likes.count %></strong>
-<% end %>
-    
-  </div>
-   <% if current_user?(@user) %>
-    <div class="review-show-edit-delete">
-      <%= link_to "編集", edit_post_review_path %>
-      <%= link_to "削除", @post_review, method: :delete, data: {confirm: "本当に削除しますか？"}%>
+    <div class="review-show-likes-bm" id="likes_buttons_<%= @post_review.id %>">
+      <%= render partial: 'likes/like', locals: { post_review: @post_review} %>
     </div>
-  <% else %>
-  <% end %>
-</div>
 
+    <% if current_user?(@user) %>
+      <div class="review-show-edit-delete">
+        <%= link_to "編集", edit_post_review_path %>
+        <%= link_to "削除", @post_review, method: :delete, data: {confirm: "本当に削除しますか？"}%>
+      </div>
+    <% else %>
+    <% end %>
+  </div>
+
+  <div class="post_review_comment">
+      <ul >
+          <li class="comment-create">
+              <h3 class="comment">コメント：<%= @comments.count %>件</h3>
+          </li>
+          <li id="comments_area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+          </li>
+      </ul>
+      <hr>
+      <% if logged_in? %>
+          <div class="comment-create">
+              <h3 class="text-left">コメントを投稿する</h3>
+              <%= render partial: 'comments/form', locals: { comment: @comment, post_review: @post_review } %>
+          </div>
+      <% end %>
+  </div>
+  
 </div>

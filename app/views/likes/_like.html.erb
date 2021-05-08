@@ -1,15 +1,7 @@
-<% if logged_in? %>
-  <% unless @post_review.like_user(current_user.id).blank? %>
-    <%= link_to post_like_path(post_review_id: @post_review.id, id: @post_review.likes[0].id), method: :delete, local: false do %>
-      <div class="vertical_like">
-        <%= image_tag "icon_red_heart.png", size: '20x20' %>
-      </div>
-    <% end %>
-  <% else %>
-      <%= link_to post_likes_path(@post_review.id), method: :post_review, local: false do %>
-      <div class="vertical_like">
-        <%= image_tag "icon_heart.png", size: '20x20' %>
-      </div>
-      <% end %>
-    <% end %>
+<% if current_user.already_liked?(@post_review) %>
+  <%= link_to image_tag("icon_red_heart.png", size: 20), post_review_like_path(@post_review.id), data: {"turbolinks" => false}, method: :delete, remote: true %>
+  <strong><%= @post_review.likes.count %></strong>
+<% else %>
+  <%= link_to image_tag("icon_heart.png", size: 20), post_review_likes_path(@post_review.id), data: {"turbolinks" => false}, method: :post, remote: true %>
+  <strong><%= @post_review.likes.count %></strong>
 <% end %>

@@ -19,6 +19,8 @@ class PostReviewsController < ApplicationController
     @post_review = PostReview.find(params[:id])
     @user = @post_review.user
     @like = Like.new
+    @comment = Comment.new
+    @comments = @post_review.comments.order(created_at: :desc)
   end
 
   def index

@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   resources :post_reviews, only: [:index, :show, :create] do
     resources :likes, only: [:create, :destroy]
   end
+  resources :post_reviews, only: [:index, :show, :new, :create] do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :users
   resources :post_reviews
   resources :guest_sessions, only: :create

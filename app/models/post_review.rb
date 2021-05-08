@@ -1,6 +1,8 @@
 class PostReview < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
   default_scope -> { order(created_at: :desc)}
   validates :user_id, presence: true
   validates :sake_name, presence: true

@@ -78,21 +78,19 @@
   </div>
 
   <div class="post_review_comment">
-      <ul >
-          <li class="comment-create">
-              <h3 class="comment">コメント：<%= @comments.count %>件</h3>
-          </li>
-          <li id="comments_area">
-              <%= render partial: 'comments/index', locals: { comments: @comments } %>
-          </li>
-      </ul>
-      <hr>
-      <% if logged_in? %>
-          <div class="comment-create">
-              <h3 class="text-left">コメントを投稿する</h3>
-              <%= render partial: 'comments/form', locals: { comment: @comment, post_review: @post_review } %>
-          </div>
-      <% end %>
+    <h3 class="comment">コメント：<%= @comments.count %>件</h3>
+    <ul >
+        <li id="comments_area">
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+        </li>
+    </ul>
+    <hr>
+    <% if logged_in? %>
+        <div class="comment-create">
+            <h3 class="text-left">コメントを投稿する</h3>
+            <%= render partial: 'comments/form', locals: { comment: @comment, post_review: @post_review } %>
+        </div>
+    <% end %>
   </div>
   
 </div>

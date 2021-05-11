@@ -5,26 +5,28 @@
   <% unless comment.id.nil? %>
     <li class="comment-container">
       <div class="comment-box">
-        <div class="comment-flex">
-          <div class="review-user-image">
-            <% if @user.image_name? %>
-              <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
-            <% else %>
-              <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
-            <% end %>
-          </div>
-          <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
-          <span class="comment-date pull-right">
-                <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-          </span>
+        <div class="review-user-image">
+          <% if comment.user.image_name? %>
+            <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+          <% else %>
+            <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+          <% end %>
         </div>
-        <div class="comment-entry">
-            <%= comment.content %>
+        <div class="comment-box2">
+          <div class="comment-name-created">
+            <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
+            <span class="comment-date pull-right">
+                  <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+            </span>
+          </div>
+          <div class="comment-entry">
+            <p><%= safe_join(comment.content.split("\n"),tag(:br)) %></p>
             <% if comment.user == current_user %>
                 <%= link_to post_review_comment_path(comment.post_review_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
                     <i class="fas fa-trash" style="color: black;"></i>
                 <% end %>
             <% end %>
+          </div>
         </div>
       </div>
     </li>
@@ -38,26 +40,28 @@
               <% unless comment.id.nil? %>
                 <li class="comment-container">
                   <div class="comment-box">
-                    <div class="comment-flex">
-                      <div class="review-user-image">
-                        <% if @user.image_name? %>
-                          <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
-                        <% else %>
-                          <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
-                        <% end %>
-                      </div>
-                      <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
-                      <span class="comment-date pull-right">
-                            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-                      </span>
+                    <div class="review-user-image">
+                      <% if comment.user.image_name? %>
+                        <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+                      <% else %>
+                        <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+                      <% end %>
                     </div>
-                    <div class="comment-entry">
-                        <%= comment.content %>
-                        <% if comment.user == current_user %>
-                            <%= link_to post_review_comment_path(comment.post_review_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
-                                <i class="fas fa-trash" style="color: black;"></i>
-                            <% end %>
-                        <% end %>
+                    <div class="comment-box2">
+                      <div class="comment-name-created">
+                        <p><%= link_to "@#{comment.user.name}", user_path(comment.user.id) %></p>
+                        <span class="comment-date pull-right">
+                              <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                        </span>
+                      </div>
+                      <div class="comment-entry">
+                          <p><%= safe_join(comment.content.split("\n"),tag(:br)) %></p>
+                          <% if comment.user == current_user %>
+                              <%= link_to post_review_comment_path(comment.post_review_id, comment.id), method: :delete, remote: true, class: "comment_destroy" do %>
+                                  <i class="fas fa-trash" style="color: black;"></i>
+                              <% end %>
+                          <% end %>
+                      </div>
                     </div>
                   </div>
                 </li>

@@ -739,15 +739,70 @@ input {
   }
 }
 
-.comment-flex{
+@media screen and(max-width: 992px) {
+  .post_review_comment{
+    > ul {
+        padding-left: 0%;
+      >li{
+  
+      }
+    }
+  }
+}
+
+.comment-container{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #777;
+}
+
+.comment-box{
   display: flex;
+}
+
+.comment-name-created{
+  > p {
+    position: relative;
+    top: -5px;
+    margin-right: 10px;
+    > a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  display: flex;
+}
+
+@media screen and(max-width: 992px) {
+  .review-show{
+    width: 100%;
+  }
+}
+
+.comment-date{
+  position: relative;
+    top: -3px;
 }
 
 .more {
   font-weight: bold;
 }
 
+.comment-entry{
+  > p{
+    width: 500px;
+    overflow-wrap:  break-word;
+    line-height: 17px;
+  }
+}
 
+@media screen and(max-width: 992px) {
+  .comment-entry{
+    > p{
+      width: 200px;
+    }
+  }
+}
 
 
 

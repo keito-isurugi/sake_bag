@@ -22,7 +22,6 @@ class PostReviewsController < ApplicationController
     @like = Like.new
     @comment = Comment.new
     @comments = @post_review.comments.order(created_at: :desc)
-    
   end
 
   def index

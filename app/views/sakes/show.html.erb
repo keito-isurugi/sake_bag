@@ -1,22 +1,20 @@
+<% sake_rate_count = (@sake.post_reviews.count).to_f %>
+<% sake_rate_sum = @sake.post_reviews.pluck(:sake_rate).compact.sum %>
+<% sake_rate_avg = sake_rate_sum / sake_rate_count %>
+
 <% provide(:title, "お酒詳細") %>
 
 <div class="review-show center">
-  <h3>お酒詳細</h3>
+  <h3><%= @sake.sake_name %></h3>
 
   <div class="review-show-content">
-    <p>名　　前：<%= @sake.sake_name %></p>
     <p>種　　類：<%= @sake.sake_type %></p>
     <p>メーカー：<%= @sake.sake_maker %></p>
-
-    <div class="review-image review-show-image">
-      <% if @post_review.sake_image_name? %>
-        <%= image_tag @post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i" %>
-      <% else %>
-        <%= image_tag "noimage.jpg", alt: "sake-image", class: "sake-image-i" %>
-      <% end %>
-    </div>
+    <p>レビュー数：<%= link_to sake_rate_count.round(0) %></p>
+    <p>平均評価：<%= sake_rate_avg.round(1) %></p>
   </div>
 
-  
+<h3>レビュー</h3>
+
 </div>
 

@@ -23,13 +23,12 @@ class SakesController < ApplicationController
   
   def show
     @sake = Sake.find(params[:id])
-    @post_review = @sake.post_review
-    @user = @post_review.user
+    @post_review = @sake.post_reviews
   end
   
   def index
     @index_sakes = Sake.paginate(page: params[:page], per_page: 18)
-    @post_review = PostReview.first
+    @post_review = PostReview.new
   end
   
   def edit

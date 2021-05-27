@@ -15,8 +15,8 @@ class UsersController < ApplicationController
     @post_reviews = @user.post_reviews.paginate(page: params[:page], per_page: 10)
     if logged_in?
       @post_review = current_user.post_reviews.build
-      # @feed_items = current_user.feed.paginate(page: params[:page])
     end
+    @sake = Sake.all
   end
 
   def new

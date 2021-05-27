@@ -1,8 +1,14 @@
 ja:
+  post_reviews:
+    new:
+      content: コメント
+  sakes:
+      content: コメント
   activerecord:
     models:
       user: ユーザー
       post_review: レビュー
+      brand: ブランド
     attributes:
       user:
         name: ユーザー名
@@ -20,3 +26,14 @@ ja:
         sake_amount: 量
         sake_rate: 評価 
         content: コメント
+      sake:
+        sake_type: お酒の種類
+        sake_image: 画像
+        sake_maker: メーカー
+        sake_name: 名称
+        sake_price: 価格
+        sake_amount: 量
+        sake_rate: 評価 
+        post_review.content: コメント
+
+            

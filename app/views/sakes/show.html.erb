@@ -1,0 +1,22 @@
+<% provide(:title, "お酒詳細") %>
+
+<div class="review-show center">
+  <h3>お酒詳細</h3>
+
+  <div class="review-show-content">
+    <p>名　　前：<%= @sake.sake_name %></p>
+    <p>種　　類：<%= @sake.sake_type %></p>
+    <p>メーカー：<%= @sake.sake_maker %></p>
+
+    <div class="review-image review-show-image">
+      <% if @post_review.sake_image_name? %>
+        <%= image_tag @post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i" %>
+      <% else %>
+        <%= image_tag "noimage.jpg", alt: "sake-image", class: "sake-image-i" %>
+      <% end %>
+    </div>
+  </div>
+
+  
+</div>
+

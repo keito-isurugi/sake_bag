@@ -33,18 +33,32 @@ User.create!(name:  name,
     password_confirmation: password)
 end
 
+# レビューを追加
 users = User.order(:created_at).take(6)
 35.times do
-  sake_name = "アサヒスーパードライ"
   sake_rate = 4.0
   content = "最高の一品。また飲みたいと思った今日このごろ"
+  sake_id = 1
   users.each { |user| user.post_reviews.create!(
     content: content,
-    sake_name: sake_name,
-    sake_rate: sake_rate
+    sake_rate: sake_rate,
+    sake_id: sake_id
     )}
 end
 
+# 酒銘柄追加
+Sake.create!(
+  sake_name:  "スーパードライ",
+  sake_type: "ビール",
+  sake_maker: "アサヒ"
+)
+Sake.create!(
+  sake_name:  "知多",
+  sake_type: "ウィスキー",
+  sake_maker: "サントリー"
+)
+
+# フォロー、フォロワーを追加
 users = User.all
 user  = users.first
 following = users[2..50]

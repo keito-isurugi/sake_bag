@@ -3,34 +3,34 @@
 <div class="main">
   <div class="container">
     <div class="center">
-        <%= form_with(model: @user, local: true) do |f| %>
-          <h2 class="new-h2">SAKE BAG 会員登録</h2>
-          <%= render 'shared/error_messages', object: f.object %>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <h2 class="new-h2">SAKE BAG 会員登録</h2>
+        <%= render 'shared/error_messages', object: f.object %>
 
-          <%= f.label :name, "ユーザー名" %>
-          <%= f.text_field :name, class: 'form-control' %>
+        <%= f.label :name, "ユーザー名" %>
+        <%= f.text_field :name, class: 'form-control' %>
 
-          <%= f.label :email, "メールアドレス" %>
-          <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :email, "メールアドレス" %>
+        <%= f.email_field :email, class: 'form-control' %>
 
-          <%= f.label :password, "パスワード" %>
-          <%= f.password_field :password, class: 'form-control',:placeholder =>"半角英数6文字以上" %>
+        <%= f.label :password, "パスワード" %>
+        <%= f.password_field :password, class: 'form-control',:placeholder =>"半角英数6文字以上" %>
 
-          <%= f.label :password_confirmation, "パスワード(確認用)" %>
-          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.label :password_confirmation, "パスワード(確認用)" %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-          <%= f.label :image_name, "プロフィール画像(任意)" %>
-          <%= f.file_field :image_name, class: 'form-control'%>
+        <%= f.label :image_name, "プロフィール画像(任意)" %>
+        <%= f.file_field :image_name, class: 'form-control'%>
 
-          <%= f.label :comment, "コメント(任意)" %>
-          <%= f.text_area :comment, class: 'form-control', size: "20x6", :placeholder =>"160文字以内"%>
+        <%= f.label :comment, "コメント(任意)" %>
+        <%= f.text_area :comment, class: 'form-control', size: "20x6", :placeholder =>"160文字以内"%>
 
-          <p class="new-p">
-            <%= link_to "SAKE BAG利用規約", terms_of_service_path %>
-          に同意の上、「同意して会員登録」ボタンを押してください。
-          </p>
-          <%= f.submit "同意して会員登録", class: "btn btn-primary" %>
-        <% end %>
+        <p class="new-p">
+          <%= link_to "SAKE BAG利用規約", terms_of_service_path %>
+        に同意の上、「同意して会員登録」ボタンを押してください。
+        </p>
+        <%= f.submit "同意して会員登録", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

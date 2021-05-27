@@ -1,0 +1,78 @@
+<% provide(:title, 'レビュー投稿') %>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+
+        <%= form_with(model: @sake, local: true) do |f| %>
+          <h2 class="new-h2">レビュー投稿</h2>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :sake_name %>
+          <%= f.text_field :sake_name, class: 'form-control' %>
+          
+          <%= f.label :sake_maker %>
+          <%= f.text_field :sake_maker, class: 'form-control' %>  
+
+          <%= f.label :sake_type %>
+          <%= f.text_field :sake_type, class: 'form-control' %>
+
+
+            <%= f.fields_for :post_reviews, @sake.post_reviews do |i| %>
+
+              <%= i.label :sake_image_name %>
+              <%= i.file_field :sake_image_name, id: :user_img, class: 'form-control'%>
+              <div class="post-image" id="post-image"> 
+              <%= image_tag("noimage.jpg", alt: "sake-image", id: :img_prev, class: "post-sake-image") %>
+                <script type="text/javascript">
+
+                  $(function() {
+                    //画像の読み込み
+                    function readURL(input) {
+                        if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                    $('#img_prev').attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+                    //画像の表示
+                    $("#user_img").change(function(){
+                        readURL(this);
+                    });
+
+                  });
+          
+                </script>
+              </div>
+
+            
+              <!-- 評価 -->
+              <div class="form-group row" id="star">
+                <%= i.label :sake_rate, class:'col-md-3 col-form-label' %>
+                <%= i.hidden_field :sake_rate, id: :review_star %>
+                <!-- 評価javascript -->
+                <script>
+                  $('#star').raty({
+                    size     : 40,
+                    starOff:  '<%= asset_path('star-off.png') %>',
+                    starOn : '<%= asset_path('star-on.png') %>',
+                    starHalf: '<%= asset_path('star-half.png') %>',
+                    scoreName: 'post_review[sake_rate]',
+                    half: true,
+                  });
+                </script>  
+              </div>
+
+              <%= i.label :content%>
+              <%= i.text_area :content, class: 'form-control', size: "20x6" %>
+              
+              <%= i.hidden_field :user_id, :value => current_user.id %>
+            <% end %>
+          <%= f.submit "レビューを記録", class: "btn btn-primary" %>
+        <% end %>
+
+    </div>
+  </div>
+</div>

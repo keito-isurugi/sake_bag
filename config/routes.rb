@@ -14,20 +14,29 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/post_review_form', to: 'post_reviews#post_review_form'
   get 'users/:id/likes', to: 'users#likes'
+
+
+  
+  resources :users
   resources :users do
     member do
       get :following, :followers
     end
   end
-  resources :post_reviews, only: [:index, :show, :create] do
-    resources :likes, only: [:create, :destroy]
-  end
+
+  resources :post_reviews
   resources :post_reviews, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create, :destroy]
   end
-  resources :users
-  resources :post_reviews
+  resources :post_reviews, only: [:index, :show, :create] do
+    resources :likes, only: [:create, :destroy]
+  end
+
   resources :guest_sessions, only: :create
   resources :post_reviews, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :sakes do
+    get :search, on: :collection
+  end
+  resources :sakes
 end

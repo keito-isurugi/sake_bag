@@ -1,0 +1,28 @@
+<% provide(:title, "お酒一覧") %>
+
+<section class="main-review">
+  <h1>お酒レビュー一覧</h1>
+    <%= will_paginate @index_sakes %>
+  <ul class="review-content">
+    <% @index_sakes.each do |sake| %>
+      <li class="review-content-i main-li">
+
+        <% if sake.sake_name? %>
+          <h4><%= sake.sake_name %></h4>
+        <% else %>
+          <h4><br></h4>
+        <% end %>
+
+        <div class="review-image">
+          <% if @post_review.sake_image_name? %>
+            <%= link_to image_tag(@post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i")%>
+          <% else %>
+            <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i")%>
+          <% end %>
+        </div>
+        <p>レビュー数：<%= link_to sake.post_reviews.count %></p>
+        <p>平均評価：<%= sake.post_reviews.count %></p>
+      </li>
+    <% end %>
+  </ul>
+  <%= will_paginate @index_sakes %>

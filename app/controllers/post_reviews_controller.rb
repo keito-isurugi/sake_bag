@@ -11,16 +11,18 @@ class PostReviewsController < ApplicationController
       flash[:success] = "レビューを投稿しました！"
       redirect_to user_url(current_user.id)
     else
-      render 'post_reviews/new'
+      render 'new'
     end
   end
 
   def show 
     @post_review = PostReview.find(params[:id])
     @user = @post_review.user
+    @sake = @post_review.sake
     @like = Like.new
     @comment = Comment.new
     @comments = @post_review.comments.order(created_at: :desc)
+    
   end
 
   def index
@@ -50,7 +52,7 @@ class PostReviewsController < ApplicationController
   private
 
   def post_review_params
-    params.require(:post_review).permit(:sake_type, :sake_image_name, :sake_maker, :sake_name, :sake_price, :sake_amoutn, :sake_rate, :content, )
+    params.require(:post_review).permit(:sake_type, :sake_image_name, :sake_maker, :sake_name, :sake_price, :sake_amoutn, :sake_rate, :content, :sake_id )
   end
 
 end

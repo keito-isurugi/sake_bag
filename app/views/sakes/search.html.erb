@@ -1,0 +1,27 @@
+<% provide(:title, "お酒検索") %>
+
+
+<div class="brandset">
+  <h4>レビュー投稿する酒名を入力し、銘柄を選択して下さい</h4>      
+  <div class="center">
+    <%= form_with url: search_sakes_path, method: :get, local: true do |f| %>
+      <%= f.text_field :sake_name %>
+      <%= f.submit :検索 %>
+    <% end %>
+    <table>
+      <thead>
+        <tr>
+          <th>銘柄</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sakes.each do |sake| %>
+          <tr>
+            <td><%= link_to sake.sake_name, new_post_review_path(id: sake.id, sake_name: sake.sake_name, sake_type: sake.sake_type, sake_maker: sake.sake_maker) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+        <%= link_to "新たにお酒を登録してレビューを投稿", new_sake_path %>
+  </div>
+</div>

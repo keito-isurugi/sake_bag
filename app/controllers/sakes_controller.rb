@@ -23,7 +23,7 @@ class SakesController < ApplicationController
   
   def show
     @sake = Sake.find(params[:id])
-    @post_review = @sake.post_reviews
+    @post_reviews = @sake.post_reviews
   end
   
   def index
@@ -55,7 +55,7 @@ class SakesController < ApplicationController
   private
 
   def sake_params
-    params.require(:sake).permit(:sake_type, :sake_maker, :sake_name, :sake_price, post_reviews_attributes: [:id, :sake_rate, :sake_image_name, :content, :sake_id, :user_id])
+    params.require(:sake).permit(:sake_type, :sake_maker, :sake_name, :sake_price, :sake_image,  post_reviews_attributes: [:id, :sake_rate, :sake_image_name, :content, :sake_id, :user_id])
   end
 
   

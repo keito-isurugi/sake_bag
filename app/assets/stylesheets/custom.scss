@@ -15,6 +15,7 @@ li {
   list-style: none;
 }
 
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -804,7 +805,35 @@ input {
   }
 }
 
+//-----------------------------------------------
+//お酒一覧
+.sake-index{
+  > h4 {
+    > a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+  > p {
+    > a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
 
+
+//-----------------------------------------------
+//お酒詳細
+.sake-show{
+  margin-bottom: 50px;
+}
+
+//-----------------------------------------------
+//お酒詳細レビュー一覧
+.sake_reviews{
+  border-top: 1px solid #777;
+}
 
 
 

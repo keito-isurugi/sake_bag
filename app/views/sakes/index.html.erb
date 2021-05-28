@@ -1,16 +1,12 @@
-<% sake_rate_count = (sake.post_reviews.count).to_f %>
-<% sake_rate_sum = sake.post_reviews.pluck(:sake_rate).compact.sum %>
-<% sake_rate_avg = sake_rate_sum / sake_rate_count %>
 
 <% provide(:title, "お酒一覧") %>
 
 <section class="main-review">
-  <h1>お酒レビュー一覧</h1>
+  <h1>お酒一覧</h1>
     <%= will_paginate @index_sakes %>
   <ul class="review-content">
     <% @index_sakes.each do |sake| %>
-      <li class="review-content-i main-li">
-
+      <li class="review-content-i main-li sake-index">
         <% if sake.sake_name? %>
           <h4><%= link_to sake.sake_name, sake %></h4>
         <% else %>
@@ -18,14 +14,18 @@
         <% end %>
 
         <div class="review-image">
-          <% if @post_review.sake_image_name? %>
-            <%= link_to image_tag(@post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i")%>
+          <% if sake.post_reviews.pluck(:sake_image_name).compact %>
+           <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), sake%>
           <% else %>
-            <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i")%>
+            <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), sake%>
           <% end %>
         </div>
-        
-        <p>レビュー数：<%= link_to sake_rate_count.round(0) %></p>
+        <% sake_rate_count = (sake.post_reviews.count).to_f %>
+        <% sake_rate_sum = sake.post_reviews.pluck(:sake_rate).compact.sum %>
+        <% sake_rate_avg = sake_rate_sum / sake_rate_count %>
+        <% sake_image = sake.post_reviews.pluck(:sake_image_name).compact.first %>
+        <p><%= sake_image %></p>
+        <p>レビュー数：<%= link_to sake_rate_count.round(0), sake%></p>
         <p>平均評価：<%= sake_rate_avg.round(1) %></p>
 
       </li>

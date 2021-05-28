@@ -1,0 +1,69 @@
+<!-- コメント内容(２件) ------------------------------------------------------------------>
+<% @post_reviews.first(5).each do |post_review| %>
+  <% unless post_review.id.nil? %>
+    <li class="comment-container">
+      <div class="comment-box">
+        <div class="review-user-image">
+          <% if post_review.user.image_name? %>
+            <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+          <% else %>
+            <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+          <% end %>
+        </div>
+        <div class="comment-box2">
+          <div class="comment-name-created">
+            <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
+            <span class="comment-date pull-right">
+                  <%= post_review.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+            </span>
+          </div>
+          <div class="comment-entry">
+            <p><%= safe_join(post_review.content.split("\n"),tag(:br)) %></p>
+            <% if post_review.user == current_user %>
+                <%= link_to post_review_path(), method: :delete, remote: true, class: "comment_destroy" do %>
+                    <i class="fas fa-trash" style="color: black;"></i>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>
+
+
+<!-- コメント内容(3件目以降) ------------------------------------------------------------------>
+    <div class="collapse" id="collapseExample">
+            <% @post_reviews.offset(5).each do |post_review| %>
+              <% unless post_review.id.nil? %>
+                <li class="comment-container">
+                  <div class="comment-box">
+                    <div class="review-user-image">
+                      <% if post_review.user.image_name? %>
+                        <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+                      <% else %>
+                        <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+                      <% end %>
+                    </div>
+                    <div class="comment-box2">
+                      <div class="comment-name-created">
+                        <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
+                        <span class="comment-date pull-right">
+                              <%= post_review.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                        </span>
+                      </div>
+                      <div class="comment-entry">
+                          <p><%= safe_join(post_review.content.split("\n"),tag(:br)) %></p>
+                          <% if post_review.user == current_user %>
+                              <%= link_to post_review_path(), method: :delete, remote: true, class: "comment_destroy" do %>
+                                  <i class="fas fa-trash" style="color: black;"></i>
+                              <% end %>
+                          <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              <% end %>
+            <% end %>
+    </div>
+    <h5 class="more btn btn-xs btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h5>

@@ -7,14 +7,21 @@
 <div class="review-show center">
   <h3><%= @sake.sake_name %></h3>
 
-  <div class="review-show-content">
+  <div class="review-show-content sake-show">
     <p>種　　類：<%= @sake.sake_type %></p>
     <p>メーカー：<%= @sake.sake_maker %></p>
-    <p>レビュー数：<%= link_to sake_rate_count.round(0) %></p>
+    <p>レビュー数：<%= sake_rate_count.round(0) %></p>
     <p>平均評価：<%= sake_rate_avg.round(1) %></p>
   </div>
 
-<h3>レビュー</h3>
+  <div class="post_review_comment sake_reviews">
+    <h3 class="comment">レビュー：<%= @sake.post_reviews.count %>件</h3>
+    <ul >
+        <li id="comments_area">
+            <%= render partial: 'sakes/review_index', locals: { post_reviews: @post_reviews } %>
+        </li>
+    </ul>
+  </div>
 
 </div>
 

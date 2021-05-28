@@ -829,10 +829,50 @@ input {
   margin-bottom: 50px;
 }
 
+
+
+
+
 //-----------------------------------------------
 //お酒詳細レビュー一覧
 .sake_reviews{
   border-top: 1px solid #777;
+}
+
+.comment-box2{
+  > a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.sake-review-user{
+  >p {
+    height: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.comment-date{
+  > a{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.sake-star{
+  display: flex;
+  text-decoration: none;
+  color: black;
+}
+
+.comment-entry{
+  > p {
+    > a{
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
 
 

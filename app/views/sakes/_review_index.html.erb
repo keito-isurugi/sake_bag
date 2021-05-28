@@ -1,24 +1,55 @@
-<!-- コメント内容(２件) ------------------------------------------------------------------>
+<!-- 5件) ------------------------------------------------------------------>
 <% @post_reviews.first(5).each do |post_review| %>
   <% unless post_review.id.nil? %>
     <li class="comment-container">
       <div class="comment-box">
         <div class="review-user-image">
           <% if post_review.user.image_name? %>
-            <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+            <%= link_to image_tag(post_review.user.image_name.url, alt: "user-image", class: "sake-image-i"), user_path(post_review.user.id) %>
           <% else %>
-            <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+            <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), user_path(post_review.user.id) %>
           <% end %>
         </div>
         <div class="comment-box2">
-          <div class="comment-name-created">
+          <div class="comment-name-created sake-review-user">
             <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
             <span class="comment-date pull-right">
-                  <%= post_review.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                  <%= link_to post_review.created_at.strftime('%Y/%m/%d %H:%M:%S'), post_review%>
             </span>
           </div>
+          
+          <%= link_to(post_review_path(post_review)) do %>
+            <div class="review-user-star sake-star">
+              <% if post_review.sake_rate == nil %>
+                <p>評価：</p>
+                <div>
+                  <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                  <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                  <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                  <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                  <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                </div>
+              <% else %>
+                <p>評価：</p>
+                <div class="review-star" id="star<%= post_review.id%>"></div>
+                <script>
+                $('#star<%= post_review.id %>').empty(); 
+                $('#star<%= post_review.id %>').raty({
+                  size      : 36,
+                  starOff   : '<%= asset_path('star-off.png') %>',
+                  starOn    : '<%= asset_path('star-on.png') %>',
+                  starHalf  : '<%= asset_path('star-half.png') %>',
+                  half      : true,
+                  readOnly  : true,
+                  score     : <%= post_review.sake_rate %>
+                });
+                </script>
+              <% end %>
+            </div>
+          <% end %>
+
           <div class="comment-entry">
-            <p><%= safe_join(post_review.content.split("\n"),tag(:br)) %></p>
+            <p><%= link_to safe_join(post_review.content.split("\n"),tag(:br)), post_review %></p>
             <% if post_review.user == current_user %>
                 <%= link_to post_review_path(), method: :delete, remote: true, class: "comment_destroy" do %>
                     <i class="fas fa-trash" style="color: black;"></i>
@@ -32,7 +63,7 @@
 <% end %>
 
 
-<!-- コメント内容(3件目以降) ------------------------------------------------------------------>
+<!-- (6件目以降) ------------------------------------------------------------------>
     <div class="collapse" id="collapseExample">
             <% @post_reviews.offset(5).each do |post_review| %>
               <% unless post_review.id.nil? %>
@@ -40,25 +71,25 @@
                   <div class="comment-box">
                     <div class="review-user-image">
                       <% if post_review.user.image_name? %>
-                        <%= image_tag post_review.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+                        <%= link_to image_tag(post_review.user.image_name.url, alt: "user-image", class: "sake-image-i"), user_path(post_review.user.id) %>
                       <% else %>
-                        <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+                        <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), user_path(post_review.user.id) %>
                       <% end %>
                     </div>
                     <div class="comment-box2">
                       <div class="comment-name-created">
                         <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
                         <span class="comment-date pull-right">
-                              <%= post_review.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                              <%= link_to post_review.created_at.strftime('%Y/%m/%d %H:%M:%S'), post_review%>
                         </span>
                       </div>
                       <div class="comment-entry">
-                          <p><%= safe_join(post_review.content.split("\n"),tag(:br)) %></p>
-                          <% if post_review.user == current_user %>
-                              <%= link_to post_review_path(), method: :delete, remote: true, class: "comment_destroy" do %>
-                                  <i class="fas fa-trash" style="color: black;"></i>
-                              <% end %>
-                          <% end %>
+                        <p><%= link_to safe_join(post_review.content.split("\n"),tag(:br)), post_review %></p>
+                        <% if post_review.user == current_user %>
+                            <%= link_to post_review_path(), method: :delete, remote: true, class: "comment_destroy" do %>
+                                <i class="fas fa-trash" style="color: black;"></i>
+                            <% end %>
+                        <% end %>
                       </div>
                     </div>
                   </div>

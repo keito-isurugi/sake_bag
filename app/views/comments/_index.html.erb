@@ -7,9 +7,9 @@
       <div class="comment-box">
         <div class="review-user-image">
           <% if comment.user.image_name? %>
-            <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+            <%= link_to image_tag(comment.user.image_name.url, alt: "user-image", class: "sake-image-i"), user_path(comment.user.id)  %>
           <% else %>
-            <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+            <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), user_path(comment.user.id) %>
           <% end %>
         </div>
         <div class="comment-box2">
@@ -42,9 +42,9 @@
                   <div class="comment-box">
                     <div class="review-user-image">
                       <% if comment.user.image_name? %>
-                        <%= image_tag comment.user.image_name.url, alt: "user-image", class: "sake-image-i" %>
+                        <%= link_to image_tag(comment.user.image_name.url, alt: "user-image", class: "sake-image-i"), user_path(comment.user.id)  %>
                       <% else %>
-                        <%= image_tag("default.png", alt: "user-image", class: "sake-image-i") %>
+                        <%= link_to image_tag("default.png", alt: "user-image", class: "sake-image-i"), user_path(comment.user.id) %>
                       <% end %>
                     </div>
                     <div class="comment-box2">

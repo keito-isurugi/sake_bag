@@ -34,10 +34,10 @@ User.create!(name:  name,
 end
 
 # レビューを追加
-users = User.order(:created_at).take(6)
-35.times do
+users = User.where(id: 1..5)
+3.times do
   sake_rate = 4.0
-  content = "最高の一品。また飲みたいと思った今日このごろ"
+  content = "スーパードライはとても美味しい。"
   sake_id = 1
   users.each { |user| user.post_reviews.create!(
     content: content,
@@ -46,16 +46,78 @@ users = User.order(:created_at).take(6)
     )}
 end
 
+users = User.where(id: 6..10)
+3.times do
+  sake_rate = 4.5
+  content = "どんな飲み方でも美味しい。"
+  sake_id = 2
+  users.each { |user| user.post_reviews.create!(
+    content: content,
+    sake_rate: sake_rate,
+    sake_id: sake_id
+    )}
+end
+
+users = User.where(id: 11..15)
+3.times do
+  sake_rate = 3.5
+  content = "芋臭さがたまらない。"
+  sake_id = 3
+  users.each { |user| user.post_reviews.create!(
+    content: content,
+    sake_rate: sake_rate,
+    sake_id: sake_id
+    )}
+end
+
+users = User.where(id: 16..20)
+3.times do
+  sake_rate = 5.0
+  content = "くどくなくて飲みやすい。"
+  sake_id = 4
+  users.each { |user| user.post_reviews.create!(
+    content: content,
+    sake_rate: sake_rate,
+    sake_id: sake_id
+    )}
+end
+
+
+# コメント追加
+post_reviews = PostReview.order(:created_at).take(5)
+6.times do
+  user_id = 2
+  content = "テストコメント。テストコメント。"
+  post_reviews.each { |post_review| post_review.comments.create!(
+    user_id: user_id,
+    content: content
+    )}
+end
+
+
 # 酒銘柄追加
 Sake.create!(
   sake_name:  "スーパードライ",
   sake_type: "ビール",
   sake_maker: "アサヒ"
 )
+
 Sake.create!(
   sake_name:  "知多",
   sake_type: "ウィスキー",
   sake_maker: "サントリー"
+)
+
+Sake.create!(
+  sake_name:  "茜霧島",
+  sake_type: "焼酎",
+  sake_maker: "霧島酒造"
+)
+
+Sake.create!(
+  sake_name:  "檸檬堂　はちみつレモン",
+  sake_type: "チューハイ",
+  sake_maker: "コカコーラ"
 )
 
 # フォロー、フォロワーを追加

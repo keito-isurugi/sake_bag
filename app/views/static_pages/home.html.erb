@@ -52,11 +52,11 @@
     <% @index_post_reviews.first(12).each do |post_review| %>
       <li class="review-content-i main-li">
 
-    <% if post_review.sake.sake_name? %>
-      <h4><%= post_review.sake.sake_name %></h4>
-    <% else %>
-      <h4><br></h4>
-    <% end %>
+      <% if post_review.sake.sake_name? %>
+        <h4><%= link_to post_review.sake.sake_name,  sake_path(post_review.sake.id) %></h4>
+      <% else %>
+        <h4><br></h4>
+      <% end %>
 
       <div class="review-image">
         <% if post_review.sake_image_name? %>

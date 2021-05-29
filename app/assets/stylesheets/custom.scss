@@ -129,6 +129,12 @@ p {
 .main-li {
   list-style: none;
   display: inline-block;
+  > h4 {
+    > a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
 
 .list-flex {

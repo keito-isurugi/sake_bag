@@ -4,6 +4,7 @@
 @import "font-awesome";
 
 
+
 //-----------------------------------------------
 //共通
 
@@ -679,6 +680,12 @@ input {
 
 .review-show-content{
   margin-top: 20px;
+  > p {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
 
 .review-show-star{
@@ -734,6 +741,14 @@ input {
   padding-bottom: 20px;
 }
 
+.review-user-star-img{
+  display: flex;
+  > p {
+    margin-top: 2px;
+    margin-left: 5px;
+    font-size: 12px;
+  }
+}
 
 //-----------------------------------------------
 //レビューコメント
@@ -835,7 +850,16 @@ input {
   margin-bottom: 50px;
 }
 
-
+.review-show-star-2{
+  display: flex;
+  > .review-show-star-img-show{
+    padding-top: 2px;
+    margin-left: 10px; 
+  }
+  > .review-show-star-rate{
+    margin-left: 10px;
+  }
+}
 
 
 
@@ -870,6 +894,10 @@ input {
   display: flex;
   text-decoration: none;
   color: black;
+
+  > p {
+    margin-left: 10px;
+  }
 }
 
 .comment-entry{
@@ -878,6 +906,17 @@ input {
       text-decoration: none;
       color: black;
     }
+  }
+}
+
+.review-show-star-2-center{
+  display: flex;
+  justify-content: center;
+  > .review-show-star-img{
+    padding-top: 2px;
+  }
+  > .review-show-star-rate{
+    margin-left: 10px;
   }
 }
 

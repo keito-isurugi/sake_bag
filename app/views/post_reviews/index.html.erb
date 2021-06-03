@@ -8,7 +8,7 @@
       <li class="review-content-i main-li">
 
     <% if post_review.sake.sake_name? %>
-      <h4><%= link_to post_review.sake.sake_name,  sake_path(post_review.sake.id) %></h4>
+      <h4><%= link_to post_review.sake.sake_name,  sake_path(post_review.id) %></h4>
     <% else %>
       <h4><br></h4>
     <% end %>
@@ -33,27 +33,30 @@
 
         <div class="review-user-star">
           <p class="review-user-star-name"><%= link_to post_review.user.name, post_review.user %></p>
-          <% if post_review.sake_rate == nil %>
-            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
-            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
-            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
-            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
-            <%= image_tag("star-off.png", alt: "star-off", class: "") %>
-          <% else %>
-            <div class="review-star" id="star<%= post_review.id%>"></div>
-            <script>
-            $('#star<%= post_review.id %>').empty(); 
-            $('#star<%= post_review.id %>').raty({
-              size      : 36,
-              starOff   : '<%= asset_path('star-off.png') %>',
-              starOn    : '<%= asset_path('star-on.png') %>',
-              starHalf  : '<%= asset_path('star-half.png') %>',
-              half      : true,
-              readOnly  : true,
-              score     : <%= post_review.sake_rate %>
-            });
-            </script>
-          <% end %>
+          <div class="review-user-star-img">
+            <% if post_review.sake_rate == nil %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <% else %>
+              <div class="review-star" id="star<%= post_review.id%>"></div>
+              <script>
+              $('#star<%= post_review.id %>').empty(); 
+              $('#star<%= post_review.id %>').raty({
+                size      : 36,
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                starHalf  : '<%= asset_path('star-half.png') %>',
+                half      : true,
+                readOnly  : true,
+                score     : <%= post_review.sake_rate %>
+              });
+              </script>
+            <% end %>
+            <p class="review-show-star-rate">(<%= post_review.sake_rate %>)</p>
+          </div>
         </div>
 
       </div>

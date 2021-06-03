@@ -16,7 +16,7 @@
     </div>
 
   <div class="review-show-content">
-    <p>名　　前：<%= @sake.sake_name %></p>
+    <p>名　　前：<%= link_to @sake.sake_name, @sake %></p>
     <p>種　　類：<%= @sake.sake_type %></p>
     <p>メーカー：<%= @sake.sake_maker %></p>
     <!-- 評価 -->
@@ -45,6 +45,7 @@
           });
           </script>
         <% end %>
+        <p class="review-show-star-rate">(<%= @post_review.sake_rate %>)</p>
       </div>
     </div>
 

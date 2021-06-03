@@ -32,12 +32,23 @@ class SakesController < ApplicationController
   end
   
   def edit
+    @sake = Sake.find(params[:id])
   end
   
   def update
+    @sake = Sake.find(params[:id])
+    if @sake.update(sake_params)
+      flash[:success] = "変更内容が保存されました"
+      redirect_to @sake
+    else
+      render 'edit'
+    end
   end
   
   def destroy 
+    Sake.find(params[:id]).destroy
+    flash[:success] = "お酒を削除しました"
+    redirect_to user_url(current_user.id)
   end
   
   def search

@@ -1,0 +1,56 @@
+<% provide(:title, 'お酒編集') %>
+
+<div class="main">
+  <div class="container">
+    <div class="center">
+
+        <%= form_with(model: @sake, local: true) do |f| %>
+          <h2 class="new-h2">お酒を編集</h2>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :sake_name %>
+          <%= f.text_field :sake_name, class: 'form-control' %>
+          
+          <%= f.label :sake_maker %>
+          <%= f.text_field :sake_maker, class: 'form-control' %>  
+
+          <%= f.label :sake_type %>
+          <%= f.text_field :sake_type, class: 'form-control' %>
+
+          <%= f.label :sake_image %>
+          <%= f.file_field :sake_image, id: :user_img, class: 'form-control'%>
+          <div class="post-image" id="post-image"> 
+            <% if @sake.sake_image? %>
+                <%= image_tag @sake.sake_image.url, alt: "sake-image", id: :img_prev, class: "post-sake-image" %>
+            <% else %>
+              <%= image_tag("noimage.jpg", alt: "sake-image", id: :img_prev, class: "post-sake-image") %>
+            <% end %>
+            <script type="text/javascript">
+
+              $(function() {
+                //画像の読み込み
+                function readURL(input) {
+                    if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                $('#img_prev').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                    }
+                }
+                //画像の表示
+                $("#user_img").change(function(){
+                    readURL(this);
+                });
+
+              });
+       
+            </script>
+          </div>
+
+          <%= f.submit "編集を保存", class: "btn btn-primary" %>
+        <% end %>
+
+    </div>
+  </div>
+</div>

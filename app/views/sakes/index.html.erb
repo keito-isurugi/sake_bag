@@ -1,4 +1,3 @@
-
 <% provide(:title, "お酒一覧") %>
 
 <section class="main-review">
@@ -14,20 +13,46 @@
         <% end %>
 
         <div class="review-image">
-          <% if sake.post_reviews.pluck(:sake_image_name).compact %>
-           <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), sake%>
+          <% if sake.sake_image? %>
+            <%= link_to image_tag(sake.sake_image.url, alt: "sake-image", class: "sake-image-i"), sake %>
           <% else %>
-            <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), sake%>
+            <%= link_to image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i"), sake %>
           <% end %>
         </div>
+
         <% sake_rate_count = (sake.post_reviews.count).to_f %>
         <% sake_rate_sum = sake.post_reviews.pluck(:sake_rate).compact.sum %>
         <% sake_rate_avg = sake_rate_sum / sake_rate_count %>
         <% sake_image = sake.post_reviews.pluck(:sake_image_name).compact.first %>
         <p><%= sake_image %></p>
-        <p>レビュー数：<%= link_to sake_rate_count.round(0), sake%></p>
-        <p>平均評価：<%= sake_rate_avg.round(1) %></p>
+        <p>レビュー：<%= link_to sake_rate_count.round(0), sake%>件</p>
 
+        <div class="review-show-star-2-center">
+          <div class="review-show-star-img">
+            <% if sake_rate_avg == nil %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+            <% else %>
+              <div class="review-star" id="star<%= sake.id%>"></div>
+              <script>
+              $('#star<%= sake.id %>').empty(); 
+              $('#star<%= sake.id %>').raty({
+                size      : 36,
+                starOff   : '<%= asset_path('star-off.png') %>',
+                starOn    : '<%= asset_path('star-on.png') %>',
+                starHalf  : '<%= asset_path('star-half.png') %>',
+                half      : true,
+                readOnly  : true,
+                score     : <%= sake_rate_avg.round(2) %>
+              });
+              </script>
+            <% end %>
+          </div>
+          <p class="review-show-star-rate">(<%= sake_rate_avg.round(2) %>)</p>
+        </div>
       </li>
     <% end %>
   </ul>

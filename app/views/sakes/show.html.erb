@@ -8,11 +8,50 @@
   <h3><%= @sake.sake_name %></h3>
 
   <div class="review-show-content sake-show">
+    <div class="review-image">
+      <% if @sake.sake_image? %>
+        <%= image_tag(@sake.sake_image.url, alt: "sake-image", class: "sake-image-i") %>
+      <% else %>
+        <%= image_tag("noimage.jpg", alt: "sake-image", class: "sake-image-i") %>
+      <% end %>
+    </div> 
     <p>種　　類：<%= @sake.sake_type %></p>
     <p>メーカー：<%= @sake.sake_maker %></p>
-    <p>レビュー数：<%= sake_rate_count.round(0) %></p>
-    <p>平均評価：<%= sake_rate_avg.round(1) %></p>
     
+    <div class="review-show-star-2">
+      <p>レビュー：<%= sake_rate_count.round(0) %>件</p>
+      <div class="review-show-star-img-show">
+        <% if sake_rate_avg == nil %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+          <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+        <% else %>
+          <div class="review-star" id="star<%= @sake.id%>"></div>
+          <script>
+          $('#star<%= @sake.id %>').empty(); 
+          $('#star<%= @sake.id %>').raty({
+            size      : 36,
+            starOff   : '<%= asset_path('star-off.png') %>',
+            starOn    : '<%= asset_path('star-on.png') %>',
+            starHalf  : '<%= asset_path('star-half.png') %>',
+            half      : true,
+            readOnly  : true,
+            score     : <%= sake_rate_avg.round(2) %>
+          });
+          </script>
+        <% end %>
+      </div>
+      <p class="review-show-star-rate">(<%= sake_rate_avg.round(2) %>)</p>
+    </div>
+
+    <% if current_user.admin? %>
+      <%= link_to "編集", edit_sake_path %>
+      | <%= link_to "削除", @sake, method: :delete, data: { confirm: "削除しますか?" } %>
+    <% end %>
+  </div>
+
   <div class="post_review_comment sake_reviews">
     <h3 class="comment">レビュー：<%= @sake.post_reviews.count %>件</h3>
     <ul >

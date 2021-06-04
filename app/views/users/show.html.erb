@@ -71,12 +71,13 @@
                 </strong>
               </a>
             </div>
-            <div class="user-tab-nav ">
-              <%= link_to "いいねしたレビュー", "/users/#{@user.id}/likes" %>
-              <strong>
-                <%= @user.likes.count %>
-              </strong>
-              </a>
+            <div class="user-tab-nav">
+              <div class="user-tab-like">
+                <%= link_to "いいねしたレビュー", "/users/#{@user.id}/likes" %>
+                <strong class="stat">
+                  <%= @user.likes.count %>
+                </strong>
+              </div>
             </div>
             <% if current_user?(@user) %>
               <div class="user-tab-nav " style="border-right: 1px solid #ddd;">

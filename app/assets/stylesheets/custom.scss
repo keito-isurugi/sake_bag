@@ -144,11 +144,19 @@ p {
   margin: 20px 30px 20px 0;
 }
 
+.btn{
+  > a{
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
 //-----------------------------------------------
 //レビュー
 .main-review{
   text-align: center;
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 .review-content{
@@ -497,6 +505,13 @@ input {
     border-bottom: 1px solid #ddd;
     }
   }
+}
+
+.user-tab-like{
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(51, 122, 183);
+  text-align: left;
 }
 
 .title{
@@ -894,8 +909,7 @@ input {
   display: flex;
   text-decoration: none;
   color: black;
-
-  > p {
+  > .review-show-star-rate {
     margin-left: 10px;
   }
 }

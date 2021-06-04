@@ -43,13 +43,14 @@
           </script>
         <% end %>
       </div>
-      <p class="review-show-star-rate">(<%= sake_rate_avg.round(2) %>)</p>
+      <p class="review-show-star-rate">(<%= sake_rate_avg.round(1) %>)</p>
     </div>
 
-    <% if current_user.admin? %>
+    <% if current_user&.admin? %>
       <%= link_to "編集", edit_sake_path %>
       | <%= link_to "削除", @sake, method: :delete, data: { confirm: "削除しますか?" } %>
     <% end %>
+
   </div>
 
   <div class="post_review_comment sake_reviews">

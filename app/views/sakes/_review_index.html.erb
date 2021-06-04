@@ -12,7 +12,7 @@
         </div>
         <div class="comment-box2">
           <div class="comment-name-created sake-review-user">
-            <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
+            <p><%= link_to "#{post_review.user.name}", user_path(post_review.user.id) %></p>
             <span class="comment-date pull-right">
                   <%= link_to post_review.created_at.strftime('%Y/%m/%d %H:%M:%S'), post_review%>
             </span>
@@ -78,12 +78,44 @@
                       <% end %>
                     </div>
                     <div class="comment-box2">
-                      <div class="comment-name-created">
-                        <p><%= link_to "@#{post_review.user.name}", user_path(post_review.user.id) %></p>
+                      <div class="comment-name-created sake-review-user">
+                        <p><%= link_to "#{post_review.user.name}", user_path(post_review.user.id) %></p>
                         <span class="comment-date pull-right">
                               <%= link_to post_review.created_at.strftime('%Y/%m/%d %H:%M:%S'), post_review%>
                         </span>
                       </div>
+                      
+                      <%= link_to(post_review_path(post_review)) do %>
+                        <div class="review-user-star sake-star">
+                          <% if post_review.sake_rate == nil %>
+                            <p>評価：</p>
+                            <div>
+                              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                              <%= image_tag("star-off.png", alt: "star-off", class: "") %>
+                            </div>
+                          <% else %>
+                            <p>評価：</p>
+                            <div class="review-star" id="star<%= post_review.id%>"></div>
+                            <script>
+                            $('#star<%= post_review.id %>').empty(); 
+                            $('#star<%= post_review.id %>').raty({
+                              size      : 36,
+                              starOff   : '<%= asset_path('star-off.png') %>',
+                              starOn    : '<%= asset_path('star-on.png') %>',
+                              starHalf  : '<%= asset_path('star-half.png') %>',
+                              half      : true,
+                              readOnly  : true,
+                              score     : <%= post_review.sake_rate %>
+                            });
+                            </script>
+                          <% end %>
+                          <p class="review-show-star-rate">(<%= post_review.sake_rate %>)</p>
+                        </div>
+                      <% end %>
+
                       <div class="comment-entry">
                         <p><%= link_to safe_join(post_review.content.split("\n"),tag(:br)), post_review %></p>
                         <% if post_review.user == current_user %>
@@ -98,4 +130,5 @@
               <% end %>
             <% end %>
     </div>
+
     <h5 class="more btn btn-xs btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">もっと見る....</h5>

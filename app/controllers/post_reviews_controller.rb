@@ -1,5 +1,5 @@
 class PostReviewsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, only: [:new, :edit, :create, :destroy]
 
   def new
     @post_review = current_user.post_reviews.build if logged_in?

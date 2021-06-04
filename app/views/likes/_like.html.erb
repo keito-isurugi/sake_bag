@@ -1,4 +1,4 @@
-<% if current_user.already_liked?(@post_review) %>
+<% if current_user&.already_liked?(@post_review) %>
   <%= link_to image_tag("icon_red_heart.png", size: 20), post_review_like_path(@post_review.id), data: {"turbolinks" => false}, method: :delete, remote: true %>
   <strong><%= @post_review.likes.count %></strong>
 <% else %>

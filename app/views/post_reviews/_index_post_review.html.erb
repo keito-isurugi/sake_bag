@@ -1,12 +1,12 @@
  
  <li class="review-content-i main-li">
 
-    <% if post_review.sake_name? %>
-      <h4><%= post_review.sake_name %></h4>
-    <% else %>
-      <h4><br></h4>
-    <% end %>
-
+   <% if post_review.sake.sake_name? %>
+        <h4><%= link_to post_review.sake.sake_name, sake_path(post_review.sake.id) %></h4>
+      <% else %>
+        <h4><br></h4>
+      <% end %>
+      
       <div class="review-image">
         <% if post_review.sake_image_name? %>
           <%= link_to image_tag(post_review.sake_image_name.url, alt: "sake-image", class: "sake-image-i"), post_review %>

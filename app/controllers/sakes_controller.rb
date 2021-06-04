@@ -1,5 +1,7 @@
 class SakesController < ApplicationController
 
+  before_action :logged_in_user, only: [:search, :new, :edit, :create, :destroy]
+
   def new
     @sake = Sake.new
     @sake.post_reviews.build

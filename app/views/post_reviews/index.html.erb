@@ -8,7 +8,7 @@
       <li class="review-content-i main-li">
 
     <% if post_review.sake.sake_name? %>
-      <h4><%= link_to post_review.sake.sake_name,  sake_path(post_review.id) %></h4>
+      <h4><%= link_to post_review.sake.sake_name,  sake_path(post_review.sake.id) %></h4>
     <% else %>
       <h4><br></h4>
     <% end %>

@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.string "sake_maker"
     t.string "sake_name"
     t.string "sake_price"
-    t.float "sake_rate"
+    t.float "sake_rate", default: 0.0, null: false
     t.string "sake_amount"
     t.integer "sake_id"
     t.index ["user_id", "created_at"], name: "index_post_reviews_on_user_id_and_created_at"

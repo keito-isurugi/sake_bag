@@ -2,6 +2,17 @@ require_relative "boot"
 
 require "rails/all"
 
+require 'amazon/ecs' 
+
+module Test
+  class Application < Rails::Application
+    Amazon::Ecs.options = {
+      :associate_tag =>     '987654321',
+      :AWS_access_key_id => 'mosmosmosmosmosmosmosmos',
+      :AWS_secret_key =>   'mosmosmosmosmosmosmosmos'
+    }
+end
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

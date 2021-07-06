@@ -1,11 +1,11 @@
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
-/Users/isurugikeito/.rbenv/versions/2.6.6/bin/ruby -I /Users/isurugikeito/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210325-16968-af3id3.rb extconf.rb
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
+/Users/isurugikeito/.rbenv/versions/2.6.6/bin/ruby -I /Users/isurugikeito/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210706-34642-9uhvc0.rb extconf.rb
 creating Makefile
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
 make DESTDIR\= clean
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
 make DESTDIR\=
 compiling bcrypt_ext.c
 bcrypt_ext.c:17:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
@@ -30,6 +30,6 @@ compiling crypt_gensalt.c
 compiling wrapper.c
 linking shared-object bcrypt_ext.bundle
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/bcrypt-3.1.13/ext/mri
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20210325-16968-117hqcn
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20210706-34642-opvpvr

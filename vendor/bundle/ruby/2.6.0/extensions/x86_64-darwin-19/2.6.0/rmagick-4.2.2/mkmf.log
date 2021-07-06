@@ -16,7 +16,7 @@ determine_imagemagick_package: checking for forced use of ImageMagick 6... -----
 
 assert_has_dev_libs!: checking for outdated ImageMagick version (<= 6.7.7)... -------------------- no
 
-Detected ImageMagick version: 7.0.11
+Detected ImageMagick version: 7.1.0
 --------------------
 
 find_executable: checking for clang... -------------------- yes
@@ -25,7 +25,7 @@ find_executable: checking for clang... -------------------- yes
 
 have_macro: checking for __GNUC__... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -36,7 +36,7 @@ checked program was:
 6: }
 /* end */
 
-"clang -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7   -c conftest.c"
+"clang -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7   -c conftest.c"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -52,7 +52,7 @@ checked program was:
 
 have_header: checking for MagickCore/MagickCore.h... -------------------- yes
 
-"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -64,7 +64,7 @@ checked program was:
 
 have_func: checking for rb_gc_adjust_memory_usage() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -96,7 +96,7 @@ checked program was:
 
 have_func: checking for posix_memalign() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -128,7 +128,7 @@ checked program was:
 
 have_func: checking for malloc_usable_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 conftest.c:23:57: error: use of undeclared identifier 'malloc_usable_size'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_usable_size; return !p; }
                                                         ^
@@ -160,10 +160,10 @@ checked program was:
 23: int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_usable_size; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 Undefined symbols for architecture x86_64:
   "_malloc_usable_size", referenced from:
-      _t in conftest-3f6c25.o
+      _t in conftest-3690d9.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -198,7 +198,7 @@ checked program was:
 
 have_func: checking for malloc_size() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 conftest.c:23:57: error: use of undeclared identifier 'malloc_size'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_size; return !p; }
                                                         ^
@@ -230,7 +230,7 @@ checked program was:
 23: int t(void) { void ((*volatile p)()); p = (void ((*)()))malloc_size; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -263,7 +263,7 @@ checked program was:
 
 have_func: checking for _aligned_msize() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 conftest.c:23:57: error: use of undeclared identifier '_aligned_msize'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))_aligned_msize; return !p; }
                                                         ^
@@ -295,10 +295,10 @@ checked program was:
 23: int t(void) { void ((*volatile p)()); p = (void ((*)()))_aligned_msize; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 Undefined symbols for architecture x86_64:
   "__aligned_msize", referenced from:
-      _t in conftest-0bb097.o
+      _t in conftest-2a71a6.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -333,7 +333,7 @@ checked program was:
 
 have_func: checking for GetImageChannelEntropy() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- no
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 conftest.c:23:57: error: use of undeclared identifier 'GetImageChannelEntropy'
 int t(void) { void ((*volatile p)()); p = (void ((*)()))GetImageChannelEntropy; return !p; }
                                                         ^
@@ -365,10 +365,10 @@ checked program was:
 23: int t(void) { void ((*volatile p)()); p = (void ((*)()))GetImageChannelEntropy; return !p; }
 /* end */
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 Undefined symbols for architecture x86_64:
   "_GetImageChannelEntropy", referenced from:
-      _t in conftest-8ea997.o
+      _t in conftest-46079a.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -403,7 +403,7 @@ checked program was:
 
 have_func: checking for SetImageGray() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -435,7 +435,7 @@ checked program was:
 
 have_func: checking for SetMagickAlignedMemoryMethods() in assert.h,ctype.h,stdio.h,stdlib.h,math.h,time.h,sys/types.h,MagickCore/MagickCore.h... -------------------- yes
 
-"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
+"clang -o conftest -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99 conftest.c  -L. -L/Users/isurugikeito/.rbenv/versions/2.6.6/lib  -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI    -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI  -lruby.2.6   "
 checked program was:
 /* begin */
  1: #include "ruby.h"
@@ -467,7 +467,7 @@ checked program was:
 
 have_header: checking for malloc.h... -------------------- no
 
-"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 conftest.c:3:10: fatal error: 'malloc.h' file not found
 #include <malloc.h>
          ^~~~~~~~~~
@@ -483,7 +483,7 @@ checked program was:
 
 have_header: checking for malloc/malloc.h... -------------------- yes
 
-"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
+"clang -E -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/x86_64-darwin19 -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0/ruby/backward -I/Users/isurugikeito/.rbenv/versions/2.6.6/include/ruby-2.6.0 -I.  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7  -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99  conftest.c -o conftest.i"
 checked program was:
 /* begin */
 1: #include "ruby.h"
@@ -516,10 +516,10 @@ extconf.h is:
 /* end */
 
 ======================================================================
-Wed 31 Mar 21 08:36:46
+Tue 06 Jul 21 10:17:14
 This installation of RMagick 4.2.2 is configured for
-Ruby 2.6.6 (x86_64-darwin19) and ImageMagick 7.0.11
+Ruby 2.6.6 (x86_64-darwin19) and ImageMagick 7.1.0
 ======================================================================
 
 
-Configured compile options: {:magick_version=>"7.0.11", :local_libs=>" -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI", :cflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7 -std=gnu99", :cppflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.0.11-4/include/ImageMagick-7", :ldflags=>" -L/usr/local/Cellar/imagemagick/7.0.11-4/lib -lMagickCore-7.Q16HDRI", :defs=>[], :config_h=>"Makefile"}
+Configured compile options: {:magick_version=>"7.1.0", :local_libs=>" -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI", :cflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7 -std=gnu99", :cppflags=>" -Xpreprocessor -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -I/usr/local/Cellar/imagemagick/7.1.0-2_1/include/ImageMagick-7", :ldflags=>" -L/usr/local/Cellar/imagemagick/7.1.0-2_1/lib -lMagickCore-7.Q16HDRI", :defs=>[], :config_h=>"Makefile"}

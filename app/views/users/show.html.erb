@@ -48,42 +48,40 @@
       <% end %>
 
       <p class="title">メニュー▼</p>
-      <ul  class="user-tab row toggle" style="margin:0;">
-            <div class="user-tab-nav">
-              <a href="#">
-              レビュー
-              <strong><%= @user.post_reviews.count %></strong>
-              </a>
-            </div>
-            <div class="user-tab-nav ">
-              <a href="<%= following_user_path(@user) %>">
-                フォロー中
-                <strong id="following" class="stat">
-                  <%= @user.following.count %>
-                </strong>
-              </a>
-            </div>
-            <div class="user-tab-nav ">
-              <a href="<%= followers_user_path(@user) %>">
-                フォロワー
-                <strong id="followers" class="stat">
-                  <%= @user.followers.count %>
-                </strong>
-              </a>
-            </div>
-            <div class="user-tab-nav">
-              <div class="user-tab-like">
-                <%= link_to "いいねしたレビュー", "/users/#{@user.id}/likes" %>
-                <strong class="stat">
-                  <%= @user.likes.count %>
-                </strong>
-              </div>
-            </div>
-            <% if current_user?(@user) %>
-              <div class="user-tab-nav " style="border-right: 1px solid #ddd;">
-                <%= link_to("レビューを投稿する",  search_sakes_path )%>
-              </div>
-            <% end %>
+      <ul  class="user-tab row toggle">
+        <li class="user-tab-nav">
+          <a href="#">
+          レビュー
+          <strong><%= @user.post_reviews.count %></strong>
+          </a>
+        </li>
+        <li class="user-tab-nav ">
+          <a href="<%= following_user_path(@user) %>">
+            フォロー中
+            <strong id="following" class="stat">
+              <%= @user.following.count %>
+            </strong>
+          </a>
+        </li>
+        <li class="user-tab-nav ">
+          <a href="<%= followers_user_path(@user) %>">
+            フォロワー
+            <strong id="followers" class="stat">
+              <%= @user.followers.count %>
+            </strong>
+          </a>
+        </li>
+        <li class="user-tab-nav user-tab-like">
+            <%= link_to "いいねしたレビュー", "/users/#{@user.id}/likes" %>
+            <strong class="stat">
+              <%= @user.likes.count %>
+            </strong>
+        </li>
+        <% if current_user?(@user) %>
+          <li class="user-tab-nav " style="border-right: 1px solid #ddd;">
+            <%= link_to("レビューを投稿する",  search_sakes_path )%>
+          </li>
+        <% end %>
       </ul>
       </div>
     </section>

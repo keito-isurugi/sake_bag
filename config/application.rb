@@ -11,6 +11,7 @@ module Test
       :AWS_access_key_id => 'mosmosmosmosmosmosmosmos',
       :AWS_secret_key =>   'mosmosmosmosmosmosmosmos'
     }
+  end 
 end
 
 # Require the gems listed in Gemfile, including any gems
@@ -45,3 +46,4 @@ module SakeBag
     config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
+

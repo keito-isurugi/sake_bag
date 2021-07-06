@@ -1,11 +1,11 @@
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-/Users/isurugikeito/.rbenv/versions/2.6.6/bin/ruby -I /Users/isurugikeito/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210325-16968-1xmec9p.rb extconf.rb
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+/Users/isurugikeito/.rbenv/versions/2.6.6/bin/ruby -I /Users/isurugikeito/.rbenv/versions/2.6.6/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210706-34642-1vlwm90.rb extconf.rb
 creating Makefile
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
 make DESTDIR\= clean
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
 make DESTDIR\=
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
@@ -75,6 +75,6 @@ compiling ./libsass/src/util_string.cpp
 compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.bundle
 
-current directory: /Users/isurugikeito/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
+current directory: /Users/isurugikeito/programming/portfolio/sake_bag/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20210325-16968-kdvr78/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20210706-34642-hy6kox/sassc

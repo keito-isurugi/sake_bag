@@ -24,7 +24,6 @@
         <% sake_rate_sum = sake.post_reviews.pluck(:sake_rate).compact.sum %>
         <% sake_rate_avg = sake_rate_sum / sake_rate_count %>
         <% sake_image = sake.post_reviews.pluck(:sake_image_name).compact.first %>
-        <p><%= sake_image %></p>
         <p>レビュー：<%= link_to sake_rate_count.round(0), sake%>件</p>
 
         <div class="review-show-star-2-center">

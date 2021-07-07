@@ -7,79 +7,90 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # 管理者ユーザー
-User.create!(name:  "石動慧斗",
+User.create!(name:  "isurugikeito",
   email: "keito@gmail.com",
+  comment: "はじめまして、こんにちは。",
   password:              "111111",
   password_confirmation: "111111",
-  admin: true)
+  image_name: File.open("app/assets/images/adminicon.png"), 
+  admin: true
+)
 
 # ゲストユーザー(簡単ログイン用)
 User.create!(name:  "ゲストユーザー",
   email: "test@example.com",
   comment: "はじめまして、こんにちは。",
   password:              "111111",
-  password_confirmation: "111111",)
+  password_confirmation: "111111",
+  image_name: File.open("app/assets/images/gest_icon.png")
+)
+
+
 
 # 追加のユーザーをまとめて生成する
 99.times do |n|
-name  = Faker::Name.name
-email = "example-#{n+1}@gmail.com"
-password = "password"
-comment = "てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。"
-User.create!(name:  name,
-    email: email,
-    comment: comment,
-    password:              password,
-    password_confirmation: password)
+  name  = Gimei.name.kanji
+  email = "example-#{n+1}@gmail.com"
+  password = "password"
+  comment = "てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。てすと。"
+  num = rand(1..6)
+  User.create!(
+      name:  name,
+      email: email,
+      comment: comment,
+      image_name: File.open("app/assets/images/icon#{num}.png"),
+      password:              password,
+      password_confirmation: password
+    )
 end
 
 # レビューを追加
-users = User.where(id: 1..5)
-3.times do
+users = User.where(id: 1..60)
+
+users.each do |user|
   sake_rate = 4.0
-  content = "スーパードライはとても美味しい。"
+  content = "スーパードライ。スーパードライ。スーパードライ。スーパードライ。"
   sake_id = 1
-  users.each { |user| user.post_reviews.create!(
+  sake_image_name = File.open("app/assets/images/superdry2.jpg")
+  user.post_reviews.create!(
     content: content,
     sake_rate: sake_rate,
-    sake_id: sake_id
-    )}
-end
+    sake_id: sake_id,
+    sake_image_name: sake_image_name
+    )
 
-users = User.where(id: 6..10)
-3.times do
   sake_rate = 4.5
-  content = "どんな飲み方でも美味しい。"
+  content = "ハイボール。ハイボール。ハイボール。ハイボール。ハイボール。ハイボール。"
   sake_id = 2
-  users.each { |user| user.post_reviews.create!(
+  sake_image_name = File.open("app/assets/images/tita2.jpg")
+  user.post_reviews.create!(
     content: content,
     sake_rate: sake_rate,
-    sake_id: sake_id
-    )}
-end
+    sake_id: sake_id,
+    sake_image_name: sake_image_name
+    )
 
-users = User.where(id: 11..15)
-3.times do
   sake_rate = 3.5
-  content = "芋臭さがたまらない。"
+  content = "いも。いも。いも。いも。いも。いも。いも。いも。いも。いも。いも。いも。いも。"
   sake_id = 3
-  users.each { |user| user.post_reviews.create!(
+  sake_image_name = File.open("app/assets/images/akane2.jpg")
+  user.post_reviews.create!(
     content: content,
     sake_rate: sake_rate,
-    sake_id: sake_id
-    )}
-end
+    sake_id: sake_id,
+    sake_image_name: sake_image_name
+    )
 
-users = User.where(id: 16..20)
-3.times do
   sake_rate = 5.0
-  content = "くどくなくて飲みやすい。"
+  content = "レモン。レモン。レモン。レモン。レモン。レモン。レモン。レモン。レモン。レモン。レモン。"
   sake_id = 4
-  users.each { |user| user.post_reviews.create!(
+  sake_image_name = File.open("app/assets/images/remondo2.jpg")
+  user.post_reviews.create!(
     content: content,
     sake_rate: sake_rate,
-    sake_id: sake_id
-    )}
+    sake_id: sake_id,
+    sake_image_name: sake_image_name
+    )
 end
 
 
@@ -99,25 +110,29 @@ end
 Sake.create!(
   sake_name:  "スーパードライ",
   sake_type: "ビール",
-  sake_maker: "アサヒ"
+  sake_maker: "アサヒ",
+  sake_image: File.open("app/assets/images/superdry1.jpg")
 )
 
 Sake.create!(
   sake_name:  "知多",
   sake_type: "ウィスキー",
-  sake_maker: "サントリー"
+  sake_maker: "サントリー",
+  sake_image: File.open("app/assets/images/tita1.jpg")
 )
 
 Sake.create!(
   sake_name:  "茜霧島",
   sake_type: "焼酎",
-  sake_maker: "霧島酒造"
+  sake_maker: "霧島酒造",
+  sake_image: File.open("app/assets/images/akane1.jpg")
 )
 
 Sake.create!(
   sake_name:  "檸檬堂　はちみつレモン",
   sake_type: "チューハイ",
-  sake_maker: "コカコーラ"
+  sake_maker: "コカコーラ",
+  sake_image: File.open("app/assets/images/remondo1.jpg")
 )
 
 # フォロー、フォロワーを追加

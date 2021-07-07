@@ -47,8 +47,15 @@ p {
 //header
 
 .header{
-  padding-left: 40px;
-  padding-right: 40px;
+  // padding-left: 40px;
+  // padding-right: 40px;
+}
+
+@media screen and(max-width: 992px) {
+  .header{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .navbar{
@@ -191,6 +198,7 @@ p {
   width: 220px;
   height: 220px;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .sake-image-i {
@@ -352,14 +360,14 @@ input {
 }
 
 .user-profile {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  // padding-top: 40px;
+  // padding-bottom: 40px;
 }
 
 @media screen and(max-width: 992px) {
   .user-profile{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
   }
 }
 

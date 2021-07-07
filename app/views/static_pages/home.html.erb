@@ -1,43 +1,42 @@
 <% provide(:title, "ホーム") %>
 
 
-<section class="main-image">
-  <section class="image">
-    <%# <%= link_to image_tag("sake5.jpg", alt: "sake photo", class: "sake-image", id: "mypic") %>
-    <img src="assets/sake5.jpg" onclick="slideshow()" alt="sake photo" class="sake-image" id="mypic">
-    <%# <script>
-      var pics_src = new Array("assets/sake1.jpg","assets/sake2.jpg","assets/sake3.jpg");
-      var num = 0;
-
-      function slideshow(){
-          if (num == 2) {
-              num = 0;
-          }
-          else {
-              num ++;
-          }
-          document.getElementById("mypic").src=pics_src[num];
-      }
-    </script> %>
-    <script>
-      var pics_src = new Array("assets/sake1.jpg","assets/sake2.jpg","assets/sake3.jpg");
-      var num = -1;
-
-      slideshow_timer();
-
-      function slideshow_timer(){
-          if (num == 2){
-              num = 0;
-          } 
-          else {
-              num ++;
-          }
-          document.getElementById("mypic").src=pics_src[num];
-          setTimeout("slideshow_timer()",3000); 
-      }
-    </script>
+<section class="main-image swiper-container">
+  <section class="image swiper-wrapper">
+    <img src="assets/sake1.jpg" alt="sake photo" class="sake-image swiper-slide">
+    <img src="assets/sake2.jpg" alt="sake photo" class="sake-image swiper-slide">
+    <img src="assets/sake3.jpg" alt="sake photo" class="sake-image swiper-slide">
+    <img src="assets/sake5.jpg" alt="sake photo" class="sake-image swiper-slide">
   </section>
+  <div class="swiper-button-prev"></div>
+	<div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
 </section>
+
+<script src="../package/swiper-bundle.js"></script>
+<script>
+  var mySwiper = new Swiper('.swiper-container', {
+  speed: 300,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    stopOnLastSlide: false,
+    disableOnInteraction: false,
+    reverseDirection: false
+  },
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+  pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+		clickable: true
+	}
+});
+</script>
+
+
 
 <div class="main-content">
 

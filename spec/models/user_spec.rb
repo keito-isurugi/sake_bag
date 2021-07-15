@@ -24,11 +24,17 @@ RSpec.describe User do
                                       'foo@bar_baz.com',
                                       'foo@bar+baz.com').for(:email)
     end
-    describe "validate unqueness of email" do
+    describe "一意でないメールアドレスは無効" do
       let!(:user) { create(:user, email: 'original@example.com') }
-      it '' do
-        
+      it 'is invalid with a duplicate email' do
+        user = build(:user, email: 'original@example.com')
+        expect(user).to_not be_valid
       end
+      it 'メールアドレスは大文字小文字を区別しない' do
+        user = build(:user, email: 'ORIGINAL@EXAMPLE.COM')
+        expect(user).to_not be_valid
+      end
+
     end
     
 

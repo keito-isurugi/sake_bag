@@ -34,11 +34,11 @@
   ・Ruby 2.6.6  
   ・Ruby on Rails 6.1.3  
   ・sqlite3 1.4.1  
-  ・RSpec
-  ・Heroku
-  ・bootstrap
-  ・sass
-  ・jquery
+  ・RSpec  　
+  ・Heroku  
+  ・bootstrap  
+  ・sass  
+  ・jquery  
   
 
 # 今後実装したい機能

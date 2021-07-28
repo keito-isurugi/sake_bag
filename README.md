@@ -39,7 +39,7 @@
   ・bootstrap  
   ・sass  
   ・jquery  
-  
+
 
 # 今後実装したい機能
 

@@ -31,7 +31,7 @@
   レスポンシブデザイン
 　
 # 技術
-  Ruby 2.6.6
-  Ruby on Rails 6.1.1
+  Ruby 2.6.6  
+  Ruby on Rails 6.1.1  
  
 

@@ -1,24 +1,46 @@
-# README
+# 概要
+ 飲んだお酒のレビューを投稿、共有するアプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# 目的
+ 飲んだお酒の味を忘れてしまうので、記録として残せたらいいなという思い、  
+ 他人のお酒の好みを知り、自分のお酒の幅を広げたいという思いで開発しました。  
+　
+ 
+# 使い方
+ ログイン後マイページのメニュータブ「レビューを投稿する」にてお酒のレビューを投稿することができます。
+ 
+ 
+# 機能
+ ・ユーザー管理機能（新規登録・ログイン）  
+ ・お酒レビュー投稿機能  
+ ・お酒レビュー一覧表示機能  
+ ・マイページお酒レビュー一覧表示機能  
+ ・ユーザー登録情報編集機能  
+ ・お酒レビュー詳細表示機能  
+ ・コメント機能  
+ ・記事編集・削除機能  
+ ・画像投稿機能(carrierwave)  
+ ・お酒レビューいいね機能  
+ ・ユーザー一覧表示機能  
+ ・ユーザーフォロー機能(ajax)  
+ ・フォロー中、フォロワー一覧表示機能  
+ ・簡単ログイン機能  
+ ・ページネーション機能(will_paginate)  
+ ・お酒一覧表示機能  
+ ・レスポンシブデザイン  
+　
+# 技術
+  ・Ruby 2.6.6  
+  ・Ruby on Rails 6.1.3  
+  ・sqlite3 1.4.1  
+  ・RSpec  
+  ・Heroku  
+  ・bootstrap  
+  ・sass  
+  ・jquery  
 
-* Ruby version
 
-* System dependencies
+# 今後実装したい機能
+ ・AWSにデプロイ  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

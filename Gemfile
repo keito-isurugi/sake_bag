@@ -29,7 +29,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3', '1.4.1'
+  # gem 'sqlite3', '1.4.1'
+  gem 'mysql2'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails', '~> 4.10.0'
@@ -77,3 +78,4 @@ gem 'aws-sdk-s3',              '1.48.0', require: false
 gem 'font-awesome-sass'
 gem 'amazon-ecs'
 gem 'gimei'
+gem 'kaminari'

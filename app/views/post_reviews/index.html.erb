@@ -1,8 +1,8 @@
 <% provide(:title, 'レビュー一覧') %>
 
-<section class="main-review">
+<section class="main-review jscroll">
   <h1>お酒レビュー一覧</h1>
-    <%= will_paginate @index_post_reviews %>
+    <%= paginate @index_post_reviews %>
   <ul class="review-content">
     <% @index_post_reviews.each do |post_review| %>
       <li class="review-content-i main-li">
@@ -68,4 +68,5 @@
     </li>
     <% end %>
   </ul>
-  <%= will_paginate @index_post_reviews %>
+  <%= paginate @index_post_reviews %>
+</section>

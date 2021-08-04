@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_05_23_140015) do
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.integer "post_review_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "likes", force: :cascade do |t|
+  create_table "likes", charset: "utf8mb4", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_review_id"
     t.datetime "created_at", precision: 6, null: false
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.index ["user_id", "post_review_id"], name: "index_likes_on_user_id_and_post_review_id", unique: true
   end
 
-  create_table "post_reviews", force: :cascade do |t|
+  create_table "post_reviews", charset: "utf8mb4", force: :cascade do |t|
     t.text "content"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sake_image_name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.index ["user_id"], name: "index_post_reviews_on_user_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
+  create_table "relationships", charset: "utf8mb4", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", precision: 6, null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "sakes", force: :cascade do |t|
+  create_table "sakes", charset: "utf8mb4", force: :cascade do |t|
     t.string "sake_name"
     t.string "sake_image"
     t.string "sake_type"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_140015) do
     t.index ["sake_name"], name: "index_sakes_on_sake_name"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false

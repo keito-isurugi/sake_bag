@@ -25,7 +25,8 @@ class PostReviewsController < ApplicationController
   end
 
   def index
-    @index_post_reviews = PostReview.paginate(page: params[:page], per_page: 18)
+    @index_post_reviews = PostReview.page(params[:page]).per(18)
+    # @index_post_reviews = PostReview.paginate(page: params[:page], per_page: 18)
   end
 
   def edit
